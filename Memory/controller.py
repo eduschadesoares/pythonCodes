@@ -1,4 +1,30 @@
-#from model import Processo
+from model import Process
 import view
 
-view.primeiro()
+p1 = Process('Spotify', 1024)
+p2 = Process('Chrome', 4098)
+p3 = Process('Minecraft', 1024)
+p4 = Process('Mozilla', 4098)
+p5 = Process('Windows', 1024)
+p6 = Process('Linux', 4098)
+p7 = Process('Eae', 1024)
+p8 = Process('asfasfas', 4098)
+
+print(p1)
+p1.save()
+print(p2)
+p2.save()
+print(p3)
+p3.save()
+print(p4)
+p4.save()
+print(p5)
+p5.save()
+print(p6)
+p6.save()
+print(p7)
+p7.save()
+print(p8)
+p8.save()
+
+print("Quantidade de processos: ", Process.process_Qnt)
