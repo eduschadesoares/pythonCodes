@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from model.model import Process, Memory
+from Memory.model import Process, Memory
 #import view
 
 
