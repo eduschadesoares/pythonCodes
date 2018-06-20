@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from model import Process, Memory
-#import view
+import view
 
 
 def addProc():
@@ -32,15 +32,21 @@ def addProc():
     #print(p8)
     p8.save()
 
-    print("Quantidade de processos: ", Process.process_Qnt)
+    #print("Quantidade de processos: ", Process.process_Qnt)
 
 def addMem():
     for i in range(4):
-        mem = Memory(i, 2048)
+        mem = Memory(i, 5)
+       # mem.save()
 
-    for each in Memory.memory_List:
-        print(each)
+  #  for each in Memory.memory_Real:
+  #      print(each)
 
+    list = mem.memory_Real
+    print("Memória")
+    for each in list:
+        print(each, end=" ")
+    print(" ")
 
 if __name__ == '__main__':
     addProc()
