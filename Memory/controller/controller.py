@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#Controller stuff here
+
 import sys
 sys.path.append('..')
 
 from model.process import Process
 from model.memory import Memory
-
-import view
+from view.view import View
 
 
 def addProc():
+    View()
     p1 = Process('Spotify', 1024)
     p2 = Process('Chrome', 4098)
     p3 = Process('Minecraft', 52)

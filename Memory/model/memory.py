@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#Memory class here
+
 
 class Memory:
     memory_List = []

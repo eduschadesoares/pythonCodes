@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#Terminal interface here
+
 class View():
-    def primeiro(self):
-        print("Teste")
+    print("ASUHASUH")
