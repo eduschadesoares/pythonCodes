@@ -4,4 +4,4 @@
 #Terminal interface here
 
 class View():
-    print("ASUHASUH")
+    pass

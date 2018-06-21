@@ -12,7 +12,12 @@ from view.view import View
 
 
 def addProc():
-    View()
+    pass
+#Chama classe view
+#     View()
+
+"""
+    #Cria os processos
     p1 = Process('Spotify', 1024)
     p2 = Process('Chrome', 4098)
     p3 = Process('Minecraft', 52)
@@ -22,6 +27,7 @@ def addProc():
     p7 = Process('Eae', 8064)
     p8 = Process('asfasfas', 1022)
 
+    #Salva os processos (conferir se tem espaço na memória)
     #print(p1)
     p1.save()
     #print(p2)
@@ -38,27 +44,31 @@ def addProc():
     p7.save()
     #print(p8)
     p8.save()
+    """
 
-    #print("Quantidade de processos: ", Process.process_Qnt)
+    #Printa Quantidade de processos criados
+    #print("Quantidade de processos: ", Process.process_Num)
 
 def addMem():
+
+#Cria as memórias do tamanho passado pelo usuário
     for i in range(4):
         mem = Memory(i, 80)
-       # mem.save()
+        print(mem)
 
-   # for each in mem.memory_Size:
-    #    print(each)
 
-   # print(Memory.memory_List)
-
-    list = mem.memory_Real
-   # print("Memória")
+#  print(Memory.memory_List)
+"""
+    Printa o vetor de memória
+    list = mem.memory_Data
     for each in list:
         print(each, end=" ")
     print(" ")
+"""
 
+#Main function
 if __name__ == '__main__':
     addProc()
     addMem()
 else:
-    print("hwuwhasuh")
+    print("Execute o arquivo controller.py")

@@ -5,7 +5,7 @@
 
 class Process:
     process_List = []
-    process_Qnt = len(process_List)
+    process_Num = len(process_List)
     process_PID = 1
 
     def __init__(self, process_Name, process_Size):
@@ -13,7 +13,7 @@ class Process:
         self.process_Size = process_Size
         self.process_PID = Process.process_PID
         Process.process_PID += 1
-        Process.process_Qnt += 1
+        Process.process_Num += 1
 
     def save(self):
         self.__class__.process_List.append(self)
