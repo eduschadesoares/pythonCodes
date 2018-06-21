@@ -1,4 +1,4 @@
 
-#### ![Alt text](https://www.python.org/static/img/python-logo.png)
+#### ![Alt text](https://www.python.org/static/community_logos/python-logo-inkscape.svg)
 
 ### Memory
