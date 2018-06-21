@@ -16,6 +16,7 @@ class Process:
     def save(self):
         self.__class__.process_List.append(self)
 
+
     def __str__(self):
         return "Processo \"%s\" - PID %s - Tamanho %s" % (self.process_Name, self.process_PID, self.process_Size)
 

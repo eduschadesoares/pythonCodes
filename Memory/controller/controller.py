@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from model import Process, Memory
+import sys
+sys.path.append('..')
+
+from model.process import Process
+from model.memory import Memory
+
 import view
 
 
@@ -36,14 +41,16 @@ def addProc():
 
 def addMem():
     for i in range(4):
-        mem = Memory(i, 5)
+        mem = Memory(i, 80)
        # mem.save()
 
-  #  for each in Memory.memory_Real:
-  #      print(each)
+   # for each in mem.memory_Size:
+    #    print(each)
+
+   # print(Memory.memory_List)
 
     list = mem.memory_Real
-    print("Memória")
+   # print("Memória")
     for each in list:
         print(each, end=" ")
     print(" ")
@@ -51,4 +58,5 @@ def addMem():
 if __name__ == '__main__':
     addProc()
     addMem()
-
+else:
+    print("hwuwhasuh")
