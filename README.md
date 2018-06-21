@@ -13,7 +13,7 @@ pip install virtualenv
 
 ### Install [Git](https://git-scm.com/)
 ```bash
-apt-get install git
+$ apt-get install git
 ```
 Some Git commands:
 ```bash
@@ -22,10 +22,6 @@ git status
 git add
 git commit
 git push
-```
-
-```html
-<h1>asfhasufhasf</h1>
 ```
 
 -----
