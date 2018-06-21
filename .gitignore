@@ -3,9 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#Folders
 .idea/
 idea/
 .vscode/
+
+#VirtualEnv Stuff
+bin/
+include/
+lib/
 
 
 # C extensions
