@@ -12,7 +12,7 @@ pip install virtualenv
 ``` 
 
 ### Install [Git](https://git-scm.com/)
-```bash
+```commandline
 apt-get install git
 ```
 Some Git commands:
