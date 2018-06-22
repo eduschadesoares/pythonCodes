@@ -18,7 +18,17 @@ class Memory:
         self.__class__.memory_List.append(self)
 
     def __str__(self):
-        return "Memória %s de tamanho %s KB. Disponível: %s KB" % (self.memory_Id + 1, self.memory_Size, self.memory_Available)
+        if self.memory_Id == 0:
+            fitType = 'First Fit'
+        elif self.memory_Id == 1:
+            fitType = 'Best Fit'
+        elif self.memory_Id == 2:
+            fitType = 'Worst Fit'
+        elif self.memory_Id == 3:
+            fitType = 'Circular Fit'
+
+
+        return "(%s) - Memória %s de tamanho %s KB. Disponível: %s KB" % (fitType, self.memory_Id + 1, self.memory_Size, self.memory_Available)
 
     def createMemories(self, size):
         for i in range(4):

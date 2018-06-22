@@ -63,10 +63,13 @@ class CtrlMemory():
         def createProcess():
             self.view.insertProcessChosen()
 
+            #Returning 'name' and 'size'
             processInfo = self.view.createProcessMessage()
 
+            #Check if dict is not null
             if processInfo != None:
-                pass
+                processName = processInfo['name']
+                processSize = processInfo['size']
 
 
 
@@ -83,16 +86,21 @@ class CtrlMemory():
             self.view.clickToContinueMessage()
 
 
-
-
-
-
-
-
-
-
         def removeProcess():
             self.view.removeProcessChosen()
+
+            processInfo = self.view.removeProcessMessage()
+
+            #Checks if return is a valid value
+            if processInfo != None:
+                print(processInfo)
+
+
+
+
+
+
+
             self.view.clickToContinueMessage()
 
         def programMenu():

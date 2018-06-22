@@ -37,12 +37,23 @@ class View():
             print("Irregular value")
             return
 
+        #Returns a dict
         processInfo = {
             'name': processName,
             'size': processSize,
         }
 
         return processInfo
+
+    def removeProcessMessage(self):
+        print("Insert the process ID:", end="")
+        try:
+            processID = int(input())
+        except ValueError:
+            print("Irregular value")
+            return
+
+        return processID
 
 
     def insertMemValueMessage(self):
