@@ -71,6 +71,24 @@ class CtrlMemory():
                 processName = processInfo['name']
                 processSize = processInfo['size']
 
+                allMemoriesList = Memory.memory_List
+
+                memoryAvailableSlots = 0
+
+                for each in allMemoriesList:
+                    if processSize > each.memory_Available:
+                        print(each)
+                        self.view.notAvailableMemory()
+                    else:
+                        memoryAvailableSlots += 1
+
+                if memoryAvailableSlots > 0:
+                    process = Process(processName, processSize)
+                    allProcessList = Process.process_List
+                    print(allProcessList)
+
+
+
 
 
 
