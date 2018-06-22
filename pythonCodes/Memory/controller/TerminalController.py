@@ -46,14 +46,45 @@ class CtrlMemory():
 
         def showMemories():
             self.view.showMemoriesChosen()
+            allMemoriesList = Memory.memory_List
 
+            for each in allMemoriesList:
+                print(each)
+                data = each.memory_Data
+                print("[ ", end="")
+                for step in data:
+                    print(step, end=" ")
 
+                print("]", end="")
+                print("\n")
 
+            self.view.clickToContinueMessage()
 
-
-
-        def insertProcess():
+        def createProcess():
             self.view.insertProcessChosen()
+
+            processInfo = self.view.createProcessMessage()
+
+            if processInfo != None:
+                pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+            self.view.clickToContinueMessage()
+
+
+
+
 
 
 
@@ -62,16 +93,7 @@ class CtrlMemory():
 
         def removeProcess():
             self.view.removeProcessChosen()
-
-
-
-
-
-
-
-
-
-
+            self.view.clickToContinueMessage()
 
         def programMenu():
             menuResultOption = self.view.menuMessage()
@@ -88,7 +110,7 @@ class CtrlMemory():
                 showMemories()
             elif menuResultOption == 2:
                 #INSERE PROCESSO STUFF
-                insertProcess()
+                createProcess()
             else:
                 #REMOVE PROCESSO STUFF
                 removeProcess()

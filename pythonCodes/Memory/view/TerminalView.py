@@ -15,7 +15,7 @@ class View():
     def showMemoriesChosen(self):
         print("Displaying memories")
     def insertProcessChosen(self):
-        print("Insert a process")
+        print("Create a process")
     def removeProcessChosen(self):
         print("Remove a process")
 
@@ -27,10 +27,31 @@ class View():
         print("O programa será fechado!")
 
     #I/O MESSAGES
+    def createProcessMessage(self):
+        print("Insert the process name:", end="")
+        processName = str(input())
+        print("Insert the process size:", end="")
+        try:
+            processSize = int(input())
+        except ValueError:
+            print("Irregular value")
+            return
+
+        processInfo = {
+            'name': processName,
+            'size': processSize,
+        }
+
+        return processInfo
+
+
     def insertMemValueMessage(self):
         print("Insira o tamanho da memória em KB. Insira 0 para finalizar:", end=" ")
         mem_Size = int(input())
         return mem_Size
+    def clickToContinueMessage(self):
+        print("Click to continue")
+        none = input()
 
     #SECCESS MESSAGES
     def successfullyCreatedMemoryMessage(self):
@@ -44,7 +65,7 @@ class View():
         print("")
         print(" MENU")
         print(" 1 - Mostrar Memórias")
-        print(" 2 - Inserir Processo")
+        print(" 2 - Criar Processo")
         print(" 3 - Remover Processo")
         print(" 0 - Sair")
         print("Insira a opção:", end="")
