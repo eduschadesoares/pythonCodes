@@ -83,16 +83,16 @@ class CtrlMemory():
                         newProcess = Process(processName, processSize)
                         if each.memory_Id == 0:
                             #FirstFit
-                            Memory.firstFit(each, newProcess.process_PID)
+                            Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
                         elif each.memory_Id == 1:
                             #BestFit
-                            Memory.firstFit(each, newProcess.process_PID)
+                            Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
                         elif each.memory_Id == 2:
                             #WorstFit
-                            Memory.firstFit(each, newProcess.process_PID)
+                            Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
                         else:
                             #CircularFit
-                            Memory.firstFit(each, newProcess.process_PID)
+                            Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
 
 
                         #allProcessList = Process.process_List
