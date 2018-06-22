@@ -44,6 +44,35 @@ class CtrlMemory():
 
     def insertPrograms(self):
 
+        def showMemories():
+            self.view.showMemoriesChosen()
+
+
+
+
+
+
+        def insertProcess():
+            self.view.insertProcessChosen()
+
+
+
+
+
+
+        def removeProcess():
+            self.view.removeProcessChosen()
+
+
+
+
+
+
+
+
+
+
+
         def programMenu():
             menuResultOption = self.view.menuMessage()
 
@@ -55,17 +84,15 @@ class CtrlMemory():
                 self.view.tryAgainMessage()
                 programMenu()
             elif menuResultOption == 1:
-                pass
                 #MOSTRA MEMORIA STUFF
+                showMemories()
             elif menuResultOption == 2:
-                pass
                 #INSERE PROCESSO STUFF
+                insertProcess()
             else:
-                pass
                 #REMOVE PROCESSO STUFF
-
-
-
+                removeProcess()
+            programMenu()
 
         programMenu()
 

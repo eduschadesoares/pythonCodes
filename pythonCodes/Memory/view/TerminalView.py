@@ -5,10 +5,24 @@
 
 class View():
 
+    #ALERT MESSAGES
+    def errorMessage(self):
+        print("Incorrect value!")
+    def tryAgainMessage(self):
+        print("Try again!")
+
+    #CHOICES
+    def showMemoriesChosen(self):
+        print("Displaying memories")
+    def insertProcessChosen(self):
+        print("Insert a process")
+    def removeProcessChosen(self):
+        print("Remove a process")
+
+
     #BASIC MESSAGES
     def programStartMessage(self):
         print("Inicializando o \"Elefante\"")
-
     def programFinishMessage(self):
         print("O programa será fechado!")
 
@@ -22,12 +36,6 @@ class View():
     def successfullyCreatedMemoryMessage(self):
         print("Memórias criadas com sucesso!")
 
-    #ALERT MESSAGES
-    def errorMessage(self):
-        print("Incorrect value!")
-
-    def tryAgainMessage(self):
-        print("Try again!")
 
     #MENU
     def menuMessage(self):
