@@ -36,6 +36,8 @@ class View():
     def successfullyCreatedMemoryMessage(self):
         print("Memórias criadas com sucesso!")
 
+    #DISPLAY INFORMATION MESSAGES
+
 
     #MENU
     def menuMessage(self):
