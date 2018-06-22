@@ -13,18 +13,16 @@ class View():
         print("O programa será fechado!")
 
     #I/O MESSAGES
-
     def insertMemValueMessage(self):
         print("Insira o tamanho da memória em KB. Insira 0 para finalizar:", end=" ")
         mem_Size = int(input())
         return mem_Size
 
     #SECCESS MESSAGES
-    def successCreateMemoryMessage(self):
+    def successfullyCreatedMemoryMessage(self):
         print("Memórias criadas com sucesso!")
 
     #ALERT MESSAGES
-
     def errorMessage(self):
         print("Incorrect value!")
 
@@ -33,7 +31,27 @@ class View():
 
     #MENU
     def menuMessage(self):
+        print("")
+        print(" MENU")
         print(" 1 - Mostrar Memórias")
         print(" 2 - Inserir Processo")
         print(" 3 - Remover Processo")
         print(" 0 - Sair")
+        print("Insira a opção:", end="")
+        try:
+            choice = int(input())
+
+            if choice == 1:
+                return 1
+            elif choice == 2:
+                return 2
+            elif choice == 3:
+                return 3
+            elif choice == 0:
+                return 0
+            else:
+                return -1
+
+        except:
+            print("Valor irregular")
+            return -1

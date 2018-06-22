@@ -20,7 +20,7 @@ class CtrlMemory():
             resultValue = self.view.insertMemValueMessage()
 
             if resultValue is 0:
-               self.view.finishMessage()
+               self.view.programFinishMessage()
                exit()
 
             elif resultValue < 0:
@@ -30,18 +30,45 @@ class CtrlMemory():
             else:
                 try:
                     Memory.createMemories(self, resultValue)
+                    return True
                 except Exception as error:
                     print("Memories couldn't be created!")
                     print(error)
                     print("The program will be finished.")
                     exit()
 
-
         self.view.programStartMessage()
-        createMemory()
+
+        if createMemory():
+            self.view.successfullyCreatedMemoryMessage()
 
     def insertPrograms(self):
-        self.view.menuMessage()
+
+        def programMenu():
+            menuResultOption = self.view.menuMessage()
+
+            if menuResultOption == 0:
+                self.view.programFinishMessage()
+                exit()
+            elif menuResultOption < 0:
+                self.view.errorMessage()
+                self.view.tryAgainMessage()
+                programMenu()
+            elif menuResultOption == 1:
+                pass
+                #MOSTRA MEMORIA STUFF
+            elif menuResultOption == 2:
+                pass
+                #INSERE PROCESSO STUFF
+            else:
+                pass
+                #REMOVE PROCESSO STUFF
+
+
+
+
+        programMenu()
+
 
 
 
