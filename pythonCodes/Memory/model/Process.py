@@ -12,6 +12,7 @@ class Process:
         self.process_Name = process_Name
         self.process_Size = process_Size
         self.process_PID = Process.process_PID
+        #self.process_Position = 0
         Process.process_PID += 1
         Process.process_Num += 1
 

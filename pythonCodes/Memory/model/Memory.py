@@ -20,5 +20,11 @@ class Memory:
     def __str__(self):
         return "Memória %s de tamanho %s KB. Disponível: %s KB" % (self.memory_Id + 1, self.memory_Size, self.memory_Available)
 
+    def createMemories(self, size):
+        for i in range(4):
+            mem = Memory(i, size)
+            print(mem)
 
 
+
+#Métodos addMem, remMem
