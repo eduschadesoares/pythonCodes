@@ -61,6 +61,7 @@ class CtrlMemory():
             self.view.clickToContinueMessage()
 
         def createProcess():
+            allMemoriesList = Memory.memory_List
             self.view.insertProcessChosen()
 
             #Returning 'name' and 'size'
@@ -71,30 +72,33 @@ class CtrlMemory():
                 processName = processInfo['name']
                 processSize = processInfo['size']
 
-                allMemoriesList = Memory.memory_List
-
-                newProcess = Process(processName, processSize)
-
                 for each in allMemoriesList:
                     if processSize > each.memory_MaxForProcess:
                         print(each)
                         self.view.notAvailableMemoryMessage()
-                        newProcess.deleteProcess()
-                        print(newProcess)
+                        #newProcess.deleteProcess()
+                        #print(newProcess)
                     else:
+
+                        newProcess = Process(processName, processSize)
+
                         if each.memory_Id == 0:
                             #FirstFit
                             Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
                             print("num proc", Process.process_List)
+                            break
                         elif each.memory_Id == 1:
                             #BestFit
                             Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
+                            break
                         elif each.memory_Id == 2:
                             #WorstFit
                             Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
+                            break
                         else:
                             #CircularFit
                             Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
+                            break
 
 
                         #allProcessList = Process.process_List
