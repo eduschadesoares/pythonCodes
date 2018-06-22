@@ -29,9 +29,14 @@ class Memory:
         elif self.memory_Id == 2:
             fitType = 'Worst Fit'
         elif self.memory_Id == 3:
-            fitType = 'Circular Fit'    
+            fitType = 'Circular Fit'
 
-        return "(%s) - Memória %s de tamanho %s KB. Disponível: %s KB" % (fitType, self.memory_Id + 1, self.memory_Size, self.memory_Available)
+        return "(%s) - Memória %s de tamanho %s KB. Disponível: %s KB. Processo máximo de: %s" % (fitType,
+                                                                                                  self.memory_Id + 1,
+                                                                                                  self.memory_Size,
+                                                                                                  self.memory_Available,
+                                                                                                  self.memory_MaxForProcess
+                                                                                                  )
 
     def createMemories(self, size):
         for i in range(4):
@@ -72,6 +77,8 @@ class Memory:
                 print("First on ", initial + 1)
                 break
 
+        for i in range(initial, final+1):
+            self.memory_Data[i] = pid
 
        # print(pid)
 #
