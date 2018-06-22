@@ -20,6 +20,8 @@ class View():
         print("Displaying memories")
     def insertProcessChosen(self):
         print("Create a process")
+    def listProcessChosen(self):
+        print("Dysplaying processes")
     def removeProcessChosen(self):
         print("Remove a process")
 
@@ -82,6 +84,7 @@ class View():
         print(" 1 - Mostrar Memórias")
         print(" 2 - Criar Processo")
         print(" 3 - Remover Processo")
+        print(" 4 - Mostrar processos")
         print(" 0 - Sair")
         print("Insira a opção:", end="")
         try:
@@ -93,6 +96,8 @@ class View():
                 return 2
             elif choice == 3:
                 return 3
+            elif choice == 4:
+                return 4
             elif choice == 0:
                 return 0
             else:

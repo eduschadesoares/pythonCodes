@@ -76,8 +76,7 @@ class CtrlMemory():
                     if processSize > each.memory_MaxForProcess:
                         print(each)
                         self.view.notAvailableMemoryMessage()
-                        #newProcess.deleteProcess()
-                        #print(newProcess)
+
                     else:
 
                         newProcess = Process(processName, processSize)
@@ -120,6 +119,19 @@ class CtrlMemory():
             self.view.clickToContinueMessage()
 
 
+        def listProcess():
+            self.view.listProcessChosen()
+
+            allProcessList = Process.process_List
+
+            for each in allProcessList:
+                print(each)
+
+            self.view.clickToContinueMessage()
+
+
+
+
         def removeProcess():
             self.view.removeProcessChosen()
 
@@ -153,9 +165,11 @@ class CtrlMemory():
             elif menuResultOption == 2:
                 #INSERE PROCESSO STUFF
                 createProcess()
-            else:
+            elif menuResultOption == 3:
                 #REMOVE PROCESSO STUFF
                 removeProcess()
+            else:
+                listProcess()
             programMenu()
 
         programMenu()
