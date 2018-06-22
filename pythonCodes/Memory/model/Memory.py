@@ -75,9 +75,6 @@ class Memory:
                     counter = 0
                 if counter is size:
                     final = i
-                    print("ini", initial)
-                    print("fin", final)
-                    print("First on ", initial + 1)
                     break
 
             for i in range(initial, final+1):
@@ -87,10 +84,12 @@ class Memory:
 
         self.verifyAvailableSpace()
 
+        content = {
+            'fit': 'Best Fit',
+            'position': initial + 1
+        }
 
-
-
-
+        return content
 
     def bestFit(self, size, pid):
         pass

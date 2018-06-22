@@ -75,6 +75,8 @@ class View():
         print("Memórias criadas com sucesso!")
 
     #DISPLAY INFORMATION MESSAGES
+    def showFitPosition(self, fit, position):
+        print("%s on %s" % (fit, position))
 
 
     #MENU

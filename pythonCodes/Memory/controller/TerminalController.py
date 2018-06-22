@@ -48,6 +48,7 @@ class CtrlMemory():
             self.view.showMemoriesChosen()
             allMemoriesList = Memory.memory_List
 
+            #Need to put this output to view
             for each in allMemoriesList:
                 print(each)
                 data = each.memory_Data
@@ -76,15 +77,12 @@ class CtrlMemory():
                     if processSize > each.memory_MaxForProcess:
                         print(each)
                         self.view.notAvailableMemoryMessage()
-
                     else:
-
                         newProcess = Process(processName, processSize)
-
                         if each.memory_Id == 0:
                             #FirstFit
-                            Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
-                            print("num proc", Process.process_List)
+                            content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
+                            self.view.showFitPosition(content['fit'], content['position'])
                             break
                         elif each.memory_Id == 1:
                             #BestFit
@@ -99,38 +97,15 @@ class CtrlMemory():
                             Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
                             break
 
-
-                        #allProcessList = Process.process_List
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             self.view.clickToContinueMessage()
 
 
         def listProcess():
             self.view.listProcessChosen()
-
             allProcessList = Process.process_List
-
             for each in allProcessList:
                 print(each)
-
             self.view.clickToContinueMessage()
-
-
-
 
         def removeProcess():
             self.view.removeProcessChosen()
