@@ -46,7 +46,7 @@ class Memory:
                 self.memory_Available -= 1
 
 
-    def firstFit(self):
-        pass
+    def firstFit(self, pid):
+        print(pid)
 
 

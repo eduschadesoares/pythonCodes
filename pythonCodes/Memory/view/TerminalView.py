@@ -10,8 +10,10 @@ class View():
         print("Incorrect value!")
     def tryAgainMessage(self):
         print("Try again!")
-    def notAvailableMemory(self):
+    def notAvailableMemoryMessage(self):
         print("Error, not enough available memory to create this process")
+    def processCreatedMessage(self):
+        print("")
 
     #CHOICES
     def showMemoriesChosen(self):

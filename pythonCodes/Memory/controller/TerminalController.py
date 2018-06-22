@@ -78,14 +78,24 @@ class CtrlMemory():
                 for each in allMemoriesList:
                     if processSize > each.memory_Available:
                         print(each)
-                        self.view.notAvailableMemory()
+                        self.view.notAvailableMemoryMessage()
                     else:
-                        memoryAvailableSlots += 1
+                        newProcess = Process(processName, processSize)
+                        if each.memory_Id == 0:
+                            #FirstFit
+                            Memory.firstFit(each, newProcess.process_PID)
+                        elif each.memory_Id == 1:
+                            #BestFit
+                            Memory.firstFit(each, newProcess.process_PID)
+                        elif each.memory_Id == 2:
+                            #WorstFit
+                            Memory.firstFit(each, newProcess.process_PID)
+                        else:
+                            #CircularFit
+                            Memory.firstFit(each, newProcess.process_PID)
 
-                if memoryAvailableSlots > 0:
-                    process = Process(processName, processSize)
-                    allProcessList = Process.process_List
-                    print(allProcessList)
+
+                        #allProcessList = Process.process_List
 
 
 
