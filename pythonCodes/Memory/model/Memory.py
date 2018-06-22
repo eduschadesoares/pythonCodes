@@ -23,7 +23,7 @@ class Memory:
     def createMemories(self, size):
         for i in range(4):
             mem = Memory(i, size)
-            print(mem)
+            #print(mem) REMOVER DPS
 
 
 

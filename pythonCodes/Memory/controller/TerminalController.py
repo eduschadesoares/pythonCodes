@@ -41,7 +41,7 @@ class CtrlMemory():
         createMemory()
 
     def insertPrograms(self):
-        pass
+        self.view.menuMessage()
 
 
 
