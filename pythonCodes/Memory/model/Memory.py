@@ -85,14 +85,38 @@ class Memory:
         self.verifyAvailableSpace()
 
         content = {
-            'fit': 'Best Fit',
+            'fit': 'First Fit',
             'position': initial + 1
         }
 
         return content
 
     def bestFit(self, size, pid):
-        pass
+        aux, counter, initial = 0, 0, 0
+        shortest = self.memory_MaxForProcess
+
+        for i in range(self.memory_Size):
+            if self.memory_Data[i] is 0:
+                if counter is 0:
+                    initial = i
+                counter += 1
+            else:
+                initial = 0
+                counter = 0
+
+
+
+
+
+
+        self.verifyAvailableSpace()
+
+        content = {
+            'fit': 'Best Fit',
+            'position': aux
+        }
+
+        return content
 
     def worstFit(self, size, pid):
         pass

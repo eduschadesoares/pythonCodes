@@ -83,19 +83,16 @@ class CtrlMemory():
                             #FirstFit
                             content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
                             self.view.showFitPosition(content['fit'], content['position'])
-                            break
                         elif each.memory_Id == 1:
                             #BestFit
-                            Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
-                            break
+                            content = Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
+                            self.view.showFitPosition(content['fit'], content['position'])
                         elif each.memory_Id == 2:
                             #WorstFit
                             Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
-                            break
                         else:
                             #CircularFit
                             Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
-                            break
 
             self.view.clickToContinueMessage()
 
