@@ -61,6 +61,8 @@ class Memory:
             else:
                 counter = 0
 
+
+
     def firstFit(self, size, pid):
         aux, counter, final, initial = 1, 0, 0, 0
 
@@ -95,45 +97,56 @@ class Memory:
     def bestFit(self, size, pid):
         aux, flagFinal, flagInitial, sizeCounter = 0, 0, 0, 0
         lastPosition = False
-
         shortestCounter = self.memory_MaxForProcess + 1
 
-        for i in range(self.memory_Size):
-            if i is self.memory_Size - 1 and self.memory_Data[i] is 0:
-                lastPosition = True
-                flagInitial = i
-                sizeCounter += 1
-                flagFinal = i
+        try:
 
-            if self.memory_Data[i] is 0 and lastPosition is False:
-                if sizeCounter is 0:
-                    flagInitial = i
-                sizeCounter += 1
-                flagFinal = i
+            for i in range(self.memory_Size):
+                if i is self.memory_Size - 1 and self.memory_Data[i] is 0:
+                    if self.memory_Data[i-1] is not 0:
+                        flagInitial = i
+                    lastPosition = True
+                    sizeCounter += 1
+                    flagFinal = i
 
-            else:
-                if sizeCounter > size:
-                    if sizeCounter < shortestCounter:
-                        shortestCounter = sizeCounter
+                if self.memory_Data[i] is 0 and lastPosition is False:
+                    if sizeCounter is 0:
+                        flagInitial = i
+                    sizeCounter += 1
+                    flagFinal = i
+
+                else:
+                    if sizeCounter > size:
+                        if sizeCounter < shortestCounter:
+                            shortestCounter = sizeCounter
+                            initial = flagInitial
+                            final = flagFinal
+
+                    #Verifica tamanho
+                    if sizeCounter is size:
+                        #shortestCounter = sizeCounter
                         initial = flagInitial
                         final = flagFinal
+                        break
 
-                #Verifica tamanho
-                if sizeCounter is size:
-                    #shortestCounter = sizeCounter
-                    initial = flagInitial
-                    final = flagFinal
-                    break
+                    sizeCounter = 0
 
-                sizeCounter = 0
+            #Fixed bug
+            if final > sizeCounter:
+                final = initial + size
+
+            for i in range(initial, final + 1):
+                self.memory_Data[i] = pid
 
 
+        except Exception as error:
+            print(error)
 
         self.verifyAvailableSpace()
 
         content = {
             'fit': 'Best Fit',
-            'position': initial+1
+            'position': initial + 1
         }
 
         return content
