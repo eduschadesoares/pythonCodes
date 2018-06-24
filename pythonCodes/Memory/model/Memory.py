@@ -95,12 +95,11 @@ class Memory:
         return content
 
     def bestFit(self, size, pid):
-        aux, flagFinal, flagInitial, sizeCounter = 0, 0, 0, 0
+        flagFinal, flagInitial, sizeCounter = 0, 0, 0
         lastPosition = False
         shortestCounter = self.memory_MaxForProcess + 1
 
         try:
-
             for i in range(self.memory_Size):
                 if i is self.memory_Size - 1 and self.memory_Data[i] is 0:
                     if self.memory_Data[i-1] is not 0:
