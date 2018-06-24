@@ -124,7 +124,7 @@ class Memory:
 
                     #Verifica tamanho
                     if sizeCounter is size:
-                        #shortestCounter = sizeCounter
+                        shortestCounter = sizeCounter
                         initial = flagInitial
                         final = flagFinal
                         break
@@ -132,8 +132,8 @@ class Memory:
                     sizeCounter = 0
 
             #Fixed bug
-            if final > sizeCounter:
-                final = initial + size
+            if shortestCounter > size:
+                final = initial + (size - 1)
 
             for i in range(initial, final + 1):
                 self.memory_Data[i] = pid
