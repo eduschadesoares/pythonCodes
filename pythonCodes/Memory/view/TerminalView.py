@@ -39,6 +39,9 @@ class View():
         print("Insert the process size:", end="")
         try:
             processSize = int(input())
+            if processSize < 1:
+                print("Invalid value")
+                return
         except ValueError:
             print("Irregular value")
             return
