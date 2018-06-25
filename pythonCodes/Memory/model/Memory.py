@@ -13,6 +13,7 @@ class Memory:
         self.memory_Size = memory_Size
         self.memory_Available = 0
         self.memory_MaxForProcess = 0
+        self.memory_LastPosition = 0
         self.memory_Data = []
 
         for i in range(self.memory_Size):
@@ -211,5 +212,42 @@ class Memory:
 
 
     def circularFit(self, size, pid):
-        pass
+        counter, final, initial = 0, 0, 0
+        i = 0
+        try:
+
+            while i < self.memory_Size:
+
+                if self.memory_Data[self.memory_LastPosition] is 0:
+                    if counter is 0:
+                        initial = self.memory_LastPosition
+                    counter += 1
+                else:
+                    initial = 0
+                    counter = 0
+                if counter is size:
+                    final = self.memory_LastPosition
+                    break
+
+                if self.memory_LastPosition is self.memory_Size - 1:
+                    self.memory_LastPosition = 0
+                else:
+                    self.memory_LastPosition += 1
+
+                i += 1
+
+            for i in range(initial, final + 1):
+                self.memory_Data[i] = pid
+
+        except Exception as error:
+            print(error)
+
+        self.verifyAvailableSpace()
+
+        content = {
+            'fit': 'Circular Fit',
+            'position': initial + 1
+        }
+
+        return content
 
