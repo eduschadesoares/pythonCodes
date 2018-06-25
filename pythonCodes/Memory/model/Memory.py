@@ -74,6 +74,10 @@ class Memory:
             else:
                 counter = 0
 
+    def removeProcessFromMemory(self, pid):
+        for i in range(self.memory_Size):
+            if self.memory_Data[i] is pid:
+                self.memory_Data[i] = 0
 
 
     def firstFit(self, size, pid):
