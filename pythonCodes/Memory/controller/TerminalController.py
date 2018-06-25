@@ -112,23 +112,35 @@ class CtrlMemory():
             self.view.listProcessChosen()
             allProcessList = Process.process_List
             for each in allProcessList:
-                print(each)
+                print(each) #Create view
             self.view.clickToContinueMessage()
 
         def removeProcess():
             self.view.removeProcessChosen()
 
-            processInfo = self.view.removeProcessMessage()
+            allProcessList = Process.process_List
 
-            #Checks if return is a valid value
-            if processInfo != None:
-                print(processInfo)
+            if not allProcessList:
+                self.view.noProcessesCreated()
+                self.view.clickToContinueMessage()
+                return
 
+            processId = self.view.removeProcessMessage()
 
+            for each in allProcessList:
+                if each.process_PID is processId:
+                    try:
+                        Memory.removeProcessFromMemory(processId)
+                        allProcessList.remove(each)
+                        self.view.processSuccessfullyRemoved(processId)
+                    except Exception as error:
+                        print(error)
+                else:
+                    self.view.processDoesntExist(processId)
+                    self.view.clickToContinueMessage()
+                    return
 
-
-
-
+            print(allProcessList)
 
             self.view.clickToContinueMessage()
 
@@ -156,7 +168,6 @@ class CtrlMemory():
             programMenu()
 
         programMenu()
-
 
 
     #Inicializa objeto view
