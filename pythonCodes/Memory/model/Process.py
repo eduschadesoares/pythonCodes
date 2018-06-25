@@ -20,9 +20,9 @@ class Process:
     def __str__(self):
         return "Processo \"%s\" - PID %s - Tamanho %s" % (self.process_Name, self.process_PID, self.process_Size)
 
-#   def deleteProcess(self):
-#       print(Process.process_List)
-#        Process.process_List.pop()
-#        Process.process_Num -= 1
+    def removeProcessList(self):
+        print(self.process_List)
+        self.process_List.pop()
+        self.process_Num -= 1
 
 
