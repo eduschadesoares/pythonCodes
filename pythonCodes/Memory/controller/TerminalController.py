@@ -44,21 +44,19 @@ class CtrlMemory():
 
     def insertPrograms(self):
 
+        #Function to show memories content
         def showMemories():
             self.view.showMemoriesChosen()
             allMemoriesList = Memory.memory_List
 
-            #Need to put this output to view
+            #Print formatted memory information
             for each in allMemoriesList:
-                print(each)
+                self.view.showMemoryInformation(each)
                 data = each.memory_Data
-                print("[ ", end="")
+                self.view.showFormattedMemoryOpenArray()
                 for step in data:
-                    print(step, end=" ")
-
-                print("]", end="")
-                print("\n")
-
+                    self.view.showFormattedMemoryStep(step)
+                self.view.showFormattedMemoryCloseArray()
             self.view.clickToContinueMessage()
 
         def createProcess():
@@ -123,18 +121,18 @@ class CtrlMemory():
             self.view.listProcessChosen()
 
             for each in allProcessList:
-                print(each) #Create view
+                self.view.showProcesses(each, each.process_Memories)
             self.view.clickToContinueMessage()
 
         def removeProcess():
-            self.view.removeProcessChosen()
-
             allProcessList = Process.process_List
 
             if not allProcessList:
                 self.view.noProcessesCreated()
                 self.view.clickToContinueMessage()
                 return
+
+            self.view.removeProcessChosen()
 
             processId = self.view.removeProcessMessage()
 
@@ -166,20 +164,16 @@ class CtrlMemory():
                 self.view.tryAgainMessage()
                 programMenu()
             elif menuResultOption == 1:
-                #MOSTRA MEMORIA STUFF
                 showMemories()
             elif menuResultOption == 2:
-                #INSERE PROCESSO STUFF
                 createProcess()
             elif menuResultOption == 3:
-                #REMOVE PROCESSO STUFF
                 removeProcess()
             else:
                 listProcess()
             programMenu()
 
         programMenu()
-
 
     #Inicializa objeto view
     def __init__(self):
