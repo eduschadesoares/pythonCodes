@@ -12,34 +12,34 @@ class View():
     def invalidValueMessage(self):
         print("Invalid value")
 
-    def tryAgainMessage(self):
-        print("Try again!")
-
     def processCreatedMessage(self):
         print("")
 
-    # SECCESS MESSAGES
-    def successfullyCreatedMemoryMessage(self):
-        print("Memories was successfully created!")
+    def tryAgainMessage(self):
+        print("Try again!")
 
+    # SUCCESS MESSAGES
     def processSuccessfullyRemoved(self, processPid):
         print("Process %s was successfully removed" %(processPid))
+
+    def successfullyCreatedMemoryMessage(self):
+        print("Memories was successfully created!")
 
     # FAIL MESSAGES
     def failedToCreateMemoryMessage(self):
         print("Memories couldn't be created!")
 
-    def processNotCreatedMessage(self):
-        print("Process could not be created, no memory available for this size")
-
     def noProcessesCreated(self):
         print("There is no process")
+
+    def notAvailableMemoryMessage(self, memoryName):
+        print(" %12s - Error, not enough available memory to create this process" %(memoryName))
 
     def processDoesntExist(self, processPID):
         print("Process %s doesn't exist" %(processPID))
 
-    def notAvailableMemoryMessage(self, memoryName):
-        print(" %12s - Error, not enough available memory to create this process" %(memoryName))
+    def processNotCreatedMessage(self):
+        print("Process could not be created, no memory available for this size")
 
     # DISPLAY INFORMATION MESSAGES
     def showFitPosition(self, fit, position):
@@ -66,9 +66,6 @@ class View():
         print("")
 
     #CHOICES
-    def showMemoriesChosen(self):
-        print("Displaying memories")
-
     def insertProcessChosen(self):
         print("Create a process")
 
@@ -78,24 +75,28 @@ class View():
     def removeProcessChosen(self):
         print("Remove a process")
 
+    def showMemoriesChosen(self):
+        print("Displaying memories")
 
     #BASIC MESSAGES
-    def programStartMessage(self):
-        print("Initializing the \"Elefante\" program")
-
     def programFinishMessage(self):
         print("The program will exit!")
+
+    def programStartMessage(self):
+        print("Initializing the \"Elefante\" program")
 
     def showMemoryInformation(self, memory):
         print(memory)
 
     #FORMATED MESSAGES
-    def showFormattedMemoryOpenArray(self):
-        print("[ ", end="")
-    def showFormattedMemoryStep(self, step):
-        print(step, end=" ")
     def showFormattedMemoryCloseArray(self):
         print("]", end="" "\n")
+
+    def showFormattedMemoryOpenArray(self):
+        print("[ ", end="")
+
+    def showFormattedMemoryStep(self, step):
+        print(step, end=" ")
 
     #I/O MESSAGES
     def clickToContinueMessage(self):
@@ -123,6 +124,15 @@ class View():
 
         return processInfo
 
+    def insertMemSizeMessage(self):
+        print("Insert the memory size (KB). Insert 0 to exit:", end=" ")
+        try:
+            mem_Size = int(input())
+        except ValueError:
+            print("Irregular value")
+            return
+        return mem_Size
+
     def removeProcessMessage(self):
         print("Insert the process ID:", end="")
         try:
@@ -134,15 +144,6 @@ class View():
             print("Irregular value")
             return
         return processID
-
-    def insertMemSizeMessage(self):
-        print("Insert the memory size (KB). Insert 0 to exit:", end=" ")
-        try:
-            mem_Size = int(input())
-        except ValueError:
-            print("Irregular value")
-            return
-        return mem_Size
 
     #MENU
     def menuMessage(self):
