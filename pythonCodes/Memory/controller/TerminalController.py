@@ -89,7 +89,8 @@ class CtrlMemory():
                             self.view.showFitPosition(content['fit'], content['position'])
                         elif each.memory_Id == 2:
                             #WorstFit
-                            Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
+                            content = Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
+                            self.view.showFitPosition(content['fit'], content['position'])
                         else:
                             #CircularFit
                             Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
