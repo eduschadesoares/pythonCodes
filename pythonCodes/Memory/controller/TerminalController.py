@@ -73,28 +73,37 @@ class CtrlMemory():
                 processName = processInfo['name']
                 processSize = processInfo['size']
 
+                counter = 0
                 for each in allMemoriesList:
-                    if processSize > each.memory_MaxForProcess:
-                        print(each)
-                        self.view.notAvailableMemoryMessage()
-                    else:
-                        newProcess = Process(processName, processSize)
-                        if each.memory_Id == 0:
-                            #FirstFit
-                            content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
-                            self.view.showFitPosition(content['fit'], content['position'])
-                        elif each.memory_Id == 1:
-                            #BestFit
-                            content = Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
-                            self.view.showFitPosition(content['fit'], content['position'])
-                        elif each.memory_Id == 2:
-                            #WorstFit
-                            content = Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
-                            self.view.showFitPosition(content['fit'], content['position'])
+                    if processSize <= each.memory_MaxForProcess:
+                        counter += 1
+
+                if counter > 0:
+                    newProcess = Process(processName, processSize)
+
+                    for each in allMemoriesList:
+                        if processSize > each.memory_MaxForProcess:
+                            #print(each) Criar view depois
+                            self.view.notAvailableMemoryMessage(each.memoryName())
                         else:
-                            #CircularFit
-                            content = Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
-                            self.view.showFitPosition(content['fit'], content['position'])
+                            if each.memory_Id == 0:
+                                #FirstFit
+                                content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
+                                self.view.showFitPosition(content['fit'], content['position'])
+                            elif each.memory_Id == 1:
+                                #BestFit
+                                content = Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
+                                self.view.showFitPosition(content['fit'], content['position'])
+                            elif each.memory_Id == 2:
+                                #WorstFit
+                                content = Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
+                                self.view.showFitPosition(content['fit'], content['position'])
+                            else:
+                                #CircularFit
+                                content = Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
+                                self.view.showFitPosition(content['fit'], content['position'])
+                else:
+                    self.view.processNotCreatedMessage()
 
             self.view.clickToContinueMessage()
 
