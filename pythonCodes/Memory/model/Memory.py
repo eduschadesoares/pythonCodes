@@ -39,6 +39,18 @@ class Memory:
                                                                                                   self.memory_MaxForProcess
                                                                                                   )
 
+
+    def memoryName(self):
+        if self.memory_Id == 0:
+            fitType = 'First Fit'
+        elif self.memory_Id == 1:
+            fitType = 'Best Fit'
+        elif self.memory_Id == 2:
+            fitType = 'Worst Fit'
+        elif self.memory_Id == 3:
+            fitType = 'Circular Fit'
+        return fitType
+
     def createMemories(self, size):
         for i in range(4):
             mem = Memory(i, size)
