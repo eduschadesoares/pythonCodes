@@ -64,7 +64,7 @@ class Memory:
 
 
     def firstFit(self, size, pid):
-        aux, counter, final, initial = 1, 0, 0, 0
+        counter, final, initial = 0, 0, 0
 
         try:
             for i in range(self.memory_Size):
@@ -151,6 +151,12 @@ class Memory:
         return content
 
     def worstFit(self, size, pid):
+
+
+
+
+
+
         pass
 
     def circularFit(self, size, pid):
