@@ -151,13 +151,65 @@ class Memory:
         return content
 
     def worstFit(self, size, pid):
+        #Same of best fit
+        flagFinal, flagInitial, sizeCounter = 0, 0, 0
+        lastPosition = False
+        shortestCounter = self.memory_MaxForProcess + 1
+
+        try:
+            for i in range(self.memory_Size):
+                if i is self.memory_Size - 1 and self.memory_Data[i] is 0:
+                    if self.memory_Data[i - 1] is not 0:
+                        flagInitial = i
+                    lastPosition = True
+                    sizeCounter += 1
+                    flagFinal = i
+
+                if self.memory_Data[i] is 0 and lastPosition is False:
+                    if sizeCounter is 0:
+                        flagInitial = i
+                    sizeCounter += 1
+                    flagFinal = i
+
+                else:
+                    if sizeCounter > size:
+                        #Changed sign from less to more
+                        if sizeCounter > shortestCounter:
+                            shortestCounter = sizeCounter
+                            initial = flagInitial
+                            final = flagFinal
+
+                    # Verifica tamanho
+                    #Changed validation from "is size" to this
+                    if sizeCounter is shortestCounter - 1:
+                        shortestCounter = sizeCounter
+                        initial = flagInitial
+                        final = flagFinal
+                        break
+
+                    sizeCounter = 0
+
+            # Fixed bug
+            if shortestCounter > size:
+                final = initial + (size - 1)
+
+            for i in range(initial, final + 1):
+                self.memory_Data[i] = pid
 
 
+        except Exception as error:
+            print(error)
+
+        self.verifyAvailableSpace()
+
+        content = {
+            'fit': 'Worst Fit',
+            'position': initial + 1
+        }
+
+        return content
 
 
-
-
-        pass
 
     def circularFit(self, size, pid):
         pass
