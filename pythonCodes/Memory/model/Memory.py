@@ -17,7 +17,8 @@ class Memory:
         self.memory_Data = []
 
         for i in range(self.memory_Size):
-            n = randint(0, 1)
+           # n = randint(0, 1)
+            n = 0
             self.memory_Data.append(n)
 
         self.__class__.memory_List.append(self)
@@ -235,6 +236,9 @@ class Memory:
 
             while i < self.memory_Size:
 
+                if self.memory_LastPosition is self.memory_Size:
+                    self.memory_LastPosition = 0
+
                 if self.memory_Data[self.memory_LastPosition] is 0:
                     if counter is 0:
                         initial = self.memory_LastPosition
@@ -247,7 +251,9 @@ class Memory:
                     break
 
                 if self.memory_LastPosition is self.memory_Size - 1:
+                    counter = 0
                     self.memory_LastPosition = 0
+                    initial = 0
                 else:
                     self.memory_LastPosition += 1
 
@@ -258,6 +264,8 @@ class Memory:
 
         except Exception as error:
             print(error)
+
+        self.memory_LastPosition += 1
 
         self.verifyAvailableSpace()
 

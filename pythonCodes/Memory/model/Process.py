@@ -28,7 +28,7 @@ class Process:
         for key, value in self.process_Memories.items():
             if value:
                 inMemory.append(key)
-                print(key)
+               # print(key)
 
         return "Process \"%s\" - PID %s - Size %s - %s" % (self.process_Name,
                                                       self.process_PID,
