@@ -148,7 +148,7 @@ class CtrlMemory():
 
 
 
-
+    #Inicializa objeto view
     def __init__(self):
         self.view = View()
 
