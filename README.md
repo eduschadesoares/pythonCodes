@@ -30,4 +30,4 @@ git push
 - First Fit
 - Best Fit 
 - Worst Fit
-- Next Fit
+- Circular Fit
