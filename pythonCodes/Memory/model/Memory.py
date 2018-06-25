@@ -79,6 +79,7 @@ class Memory:
             if self.memory_Data[i] is pid:
                 self.memory_Data[i] = 0
 
+        self.verifyAvailableSpace()
 
     def firstFit(self, size, pid):
         counter, final, initial = 0, 0, 0
