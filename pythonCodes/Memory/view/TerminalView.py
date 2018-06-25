@@ -18,10 +18,13 @@ class View():
     #CHOICES
     def showMemoriesChosen(self):
         print("Displaying memories")
+
     def insertProcessChosen(self):
         print("Create a process")
+
     def listProcessChosen(self):
         print("Dysplaying processes")
+
     def removeProcessChosen(self):
         print("Remove a process")
 
@@ -69,6 +72,7 @@ class View():
         print("Insira o tamanho da memória em KB. Insira 0 para finalizar:", end=" ")
         mem_Size = int(input())
         return mem_Size
+
     def clickToContinueMessage(self):
         print("Click to continue")
         none = input()
