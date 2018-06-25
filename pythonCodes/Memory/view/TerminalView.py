@@ -16,6 +16,12 @@ class View():
         print("")
     def processNotCreatedMessage(self):
         print("Process could not be created, no memory available for this size")
+    def noProcessesCreated(self):
+        print("There is no process")
+    def processDoesntExist(self, processPID):
+        print("Process %s doesn't exist" %(processPID))
+    def processSuccessfullyRemoved(self, processPid):
+        print("Process %s was successfully removed" %(processPid))
 
     #CHOICES
     def showMemoriesChosen(self):
@@ -63,6 +69,9 @@ class View():
         print("Insert the process ID:", end="")
         try:
             processID = int(input())
+            if processID < 1:
+                print("Invalid value")
+                return
         except ValueError:
             print("Irregular value")
             return
