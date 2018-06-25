@@ -17,7 +17,7 @@ class Memory:
         self.memory_Data = []
 
         for i in range(self.memory_Size):
-           # n = randint(0, 1)
+            #n = randint(0, 1) #Some tests
             n = 0
             self.memory_Data.append(n)
 
@@ -56,17 +56,19 @@ class Memory:
         for i in range(4):
             mem = Memory(i, size)
             mem.verifyAvailableSpace()
-            #print(mem) REMOVER DPS
 
-    #Just some tests here
     def verifyAvailableSpace(self):
         counter, maxSize = 0,0
         self.memory_MaxForProcess = 0
         self.memory_Available = 0
+
+        #Verify memory size
         for i in range(self.memory_Size):
             if self.memory_Data[i] is 0:
                 self.memory_Available += 1
 
+
+        #Verify max size for a process
         for i in range(self.memory_Size):
             if self.memory_Data[i] is 0:
                 counter += 1
