@@ -10,21 +10,21 @@ from model.Process import Process
 from model.Memory import Memory
 from view.TerminalView import View
 
-
-
 class CtrlMemory():
 
     def startMemory(self):
 
         def createMemory():
-            resultValue = self.view.insertMemValueMessage()
+            #Memory size input
+            resultValue = self.view.insertMemSizeMessage()
 
-            if resultValue is 0:
-               self.view.programFinishMessage()
-               exit()
-
+            #Verify if value is not none
+            if resultValue is 0 or resultValue is None:
+                self.view.programFinishMessage()
+                exit()
+            #Verify if value is less than 0
             elif resultValue < 0:
-                self.view.errorMessage()
+                self.view.incorrectValueMessage()
                 self.view.tryAgainMessage()
                 createMemory()
             else:
@@ -32,9 +32,9 @@ class CtrlMemory():
                     Memory.createMemories(self, resultValue)
                     return True
                 except Exception as error:
-                    print("Memories couldn't be created!")
+                    self.view.failedToCreateMemoryMessage()
                     print(error)
-                    print("The program will be finished.")
+                    self.view.programFinishMessage()
                     exit()
 
         self.view.programStartMessage()
@@ -162,7 +162,7 @@ class CtrlMemory():
                 self.view.programFinishMessage()
                 exit()
             elif menuResultOption < 0:
-                self.view.errorMessage()
+                self.view.incorrectValueMessage()
                 self.view.tryAgainMessage()
                 programMenu()
             elif menuResultOption == 1:
