@@ -89,18 +89,22 @@ class CtrlMemory():
                             if each.memory_Id == 0:
                                 #FirstFit
                                 content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
+                                newProcess.process_Memories['firstFit'] = True
                                 self.view.showFitPosition(content['fit'], content['position'])
                             elif each.memory_Id == 1:
                                 #BestFit
                                 content = Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
+                                newProcess.process_Memories['bestFit'] = True
                                 self.view.showFitPosition(content['fit'], content['position'])
                             elif each.memory_Id == 2:
                                 #WorstFit
                                 content = Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
+                                newProcess.process_Memories['worstFit'] = True
                                 self.view.showFitPosition(content['fit'], content['position'])
                             else:
                                 #CircularFit
                                 content = Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
+                                newProcess.process_Memories['circularFit'] = True
                                 self.view.showFitPosition(content['fit'], content['position'])
                 else:
                     self.view.processNotCreatedMessage()
@@ -130,18 +134,18 @@ class CtrlMemory():
             for each in allProcessList:
                 if each.process_PID is processId:
                     try:
-                        Memory.removeProcessFromMemory(processId)
+                        allMemoriesList = Memory.memory_List
+
+                        for each2 in allMemoriesList:
+                            each2.removeProcessFromMemory(processId)
+
                         allProcessList.remove(each)
                         self.view.processSuccessfullyRemoved(processId)
+                        return
                     except Exception as error:
                         print(error)
-                else:
-                    self.view.processDoesntExist(processId)
-                    self.view.clickToContinueMessage()
-                    return
 
-            print(allProcessList)
-
+            self.view.processDoesntExist(processId)
             self.view.clickToContinueMessage()
 
         def programMenu():
