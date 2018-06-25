@@ -27,3 +27,7 @@ git push
 -----
 
 # Memory
+- First Fit
+- Best Fit 
+- Worst Fit
+- Next Fit
