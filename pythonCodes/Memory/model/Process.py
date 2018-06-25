@@ -13,10 +13,10 @@ class Process:
         self.process_Size = process_Size
         self.process_PID = Process.process_PID
         self.process_Memories = {
-            'firstFit'   : False,
-            'bestFit'    : False,
-            'worstFit'   : False,
-            'circularFit': False,
+            'First Fit'   : False,
+            'Best Fit'    : False,
+            'Worst Fit'   : False,
+            'Circular Fit': False,
         }
         Process.process_PID += 1
         Process.process_Num += 1
@@ -24,4 +24,14 @@ class Process:
 
 
     def __str__(self):
-        return "Processo \"%s\" - PID %s - Tamanho %s" % (self.process_Name, self.process_PID, self.process_Size)
+        inMemory = []
+        for key, value in self.process_Memories.items():
+            if value:
+                inMemory.append(key)
+                print(key)
+
+        return "Process \"%s\" - PID %s - Size %s - %s" % (self.process_Name,
+                                                      self.process_PID,
+                                                      self.process_Size,
+                                                      inMemory
+                                                      )
