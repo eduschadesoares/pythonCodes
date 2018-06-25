@@ -12,6 +12,12 @@ class Process:
         self.process_Name = process_Name
         self.process_Size = process_Size
         self.process_PID = Process.process_PID
+        self.process_Memories = {
+            'firstFit'   : False,
+            'bestFit'    : False,
+            'worstFit'   : False,
+            'circularFit': False,
+        }
         Process.process_PID += 1
         Process.process_Num += 1
         self.__class__.process_List.append(self)
