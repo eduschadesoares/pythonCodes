@@ -121,7 +121,7 @@ class Memory:
                             initial = flagInitial
                             final = flagFinal
 
-                    #Verifica tamanho
+                    #Verify size
                     if sizeCounter is size:
                         shortestCounter = sizeCounter
                         initial = flagInitial
@@ -179,7 +179,7 @@ class Memory:
                             initial = flagInitial
                             final = flagFinal
 
-                    # Verifica tamanho
+                    #Verify size
                     #Changed validation from "is size" to this
                     if sizeCounter is shortestCounter - 1:
                         shortestCounter = sizeCounter
@@ -208,7 +208,6 @@ class Memory:
         }
 
         return content
-
 
 
     def circularFit(self, size, pid):
