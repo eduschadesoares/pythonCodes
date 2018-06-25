@@ -113,8 +113,15 @@ class CtrlMemory():
 
 
         def listProcess():
-            self.view.listProcessChosen()
             allProcessList = Process.process_List
+
+            if not allProcessList:
+                self.view.noProcessesCreated()
+                self.view.clickToContinueMessage()
+                return
+
+            self.view.listProcessChosen()
+
             for each in allProcessList:
                 print(each) #Create view
             self.view.clickToContinueMessage()
