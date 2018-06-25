@@ -93,7 +93,8 @@ class CtrlMemory():
                             self.view.showFitPosition(content['fit'], content['position'])
                         else:
                             #CircularFit
-                            Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
+                            content = Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
+                            self.view.showFitPosition(content['fit'], content['position'])
 
             self.view.clickToContinueMessage()
 
