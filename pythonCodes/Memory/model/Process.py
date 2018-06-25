@@ -22,16 +22,8 @@ class Process:
         Process.process_Num += 1
         self.__class__.process_List.append(self)
 
-
     def __str__(self):
-        inMemory = []
-        for key, value in self.process_Memories.items():
-            if value:
-                inMemory.append(key)
-               # print(key)
-
-        return "Process \"%s\" - PID %s - Size %s - %s" % (self.process_Name,
+        return "Process \"%s\" - PID %s - Size %s" % (self.process_Name,
                                                       self.process_PID,
                                                       self.process_Size,
-                                                      inMemory
                                                       )
