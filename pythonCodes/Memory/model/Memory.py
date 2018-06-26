@@ -3,7 +3,8 @@
 
 from random import randint
 
-#Memory class here
+
+# Memory class here
 
 class Memory:
     memory_List = []
@@ -16,30 +17,25 @@ class Memory:
         self.memory_LastPosition = 0
         self.memory_Data = []
 
+        # Creates an array with 0
         for i in range(self.memory_Size):
-            #n = randint(0, 1) #Some tests
+            # Some tests
+            # n = randint(0, 1)
             n = 0
             self.memory_Data.append(n)
 
+        # Add this object to the list
         self.__class__.memory_List.append(self)
 
     def __str__(self):
-        if self.memory_Id == 0:
-            fitType = 'First Fit'
-        elif self.memory_Id == 1:
-            fitType = 'Best Fit'
-        elif self.memory_Id == 2:
-            fitType = 'Worst Fit'
-        elif self.memory_Id == 3:
-            fitType = 'Circular Fit'
-
-        return "(%s) - Memória %s de tamanho %s KB. Disponível: %s KB. Processo máximo de: %s" % (fitType,
-                                                                                                  self.memory_Id + 1,
-                                                                                                  self.memory_Size,
-                                                                                                  self.memory_Available,
-                                                                                                  self.memory_MaxForProcess
-                                                                                                  )
-
+        # Returns size and names of each memory
+        fitType = self.memoryName()
+        return "(%s) - Memory %s - Size: %s KB - Available: %s KB - Max size for process: %s" % (fitType,
+                                                                                                 self.memory_Id + 1,
+                                                                                                 self.memory_Size,
+                                                                                                 self.memory_Available,
+                                                                                                 self.memory_MaxForProcess
+                                                                                                 )
 
     def memoryName(self):
         if self.memory_Id == 0:
@@ -58,17 +54,16 @@ class Memory:
             mem.verifyAvailableSpace()
 
     def verifyAvailableSpace(self):
-        counter, maxSize = 0,0
+        counter = 0
         self.memory_MaxForProcess = 0
         self.memory_Available = 0
 
-        #Verify memory size
+        # Verify memory size
         for i in range(self.memory_Size):
             if self.memory_Data[i] is 0:
                 self.memory_Available += 1
 
-
-        #Verify max size for a process
+        # Verify max size for a process
         for i in range(self.memory_Size):
             if self.memory_Data[i] is 0:
                 counter += 1
@@ -81,12 +76,10 @@ class Memory:
         for i in range(self.memory_Size):
             if self.memory_Data[i] is pid:
                 self.memory_Data[i] = 0
-
         self.verifyAvailableSpace()
 
     def firstFit(self, size, pid):
         counter, final, initial = 0, 0, 0
-
         try:
             for i in range(self.memory_Size):
                 if self.memory_Data[i] is 0:
@@ -100,7 +93,7 @@ class Memory:
                     final = i
                     break
 
-            for i in range(initial, final+1):
+            for i in range(initial, final + 1):
                 self.memory_Data[i] = pid
 
         except Exception as error:
@@ -123,7 +116,7 @@ class Memory:
         try:
             for i in range(self.memory_Size):
                 if i is self.memory_Size - 1 and self.memory_Data[i] is 0:
-                    if self.memory_Data[i-1] is not 0:
+                    if self.memory_Data[i - 1] is not 0:
                         flagInitial = i
                     lastPosition = True
                     sizeCounter += 1
@@ -142,7 +135,7 @@ class Memory:
                             initial = flagInitial
                             final = flagFinal
 
-                    #Verify size
+                    # Verify size
                     if sizeCounter is size:
                         shortestCounter = sizeCounter
                         initial = flagInitial
@@ -151,13 +144,11 @@ class Memory:
 
                     sizeCounter = 0
 
-            #Fixed bug
             if shortestCounter > size:
                 final = initial + (size - 1)
 
             for i in range(initial, final + 1):
                 self.memory_Data[i] = pid
-
 
         except Exception as error:
             print(error)
@@ -172,7 +163,7 @@ class Memory:
         return content
 
     def worstFit(self, size, pid):
-        #Same of best fit
+        # Same of best fit
         flagFinal, flagInitial, sizeCounter = 0, 0, 0
         lastPosition = False
         shortestCounter = self.memory_MaxForProcess + 1
@@ -194,14 +185,14 @@ class Memory:
 
                 else:
                     if sizeCounter > size:
-                        #Changed sign from less to more
+                        # Changed sign - less to more
                         if sizeCounter > shortestCounter:
                             shortestCounter = sizeCounter
                             initial = flagInitial
                             final = flagFinal
 
-                    #Verify size
-                    #Changed validation from "is size" to this
+                    # Verify size
+                    # Changed validation from "is size" to is "shortestCounter"
                     if sizeCounter is shortestCounter - 1:
                         shortestCounter = sizeCounter
                         initial = flagInitial
@@ -210,13 +201,11 @@ class Memory:
 
                     sizeCounter = 0
 
-            # Fixed bug
             if shortestCounter > size:
                 final = initial + (size - 1)
 
             for i in range(initial, final + 1):
                 self.memory_Data[i] = pid
-
 
         except Exception as error:
             print(error)
@@ -230,17 +219,13 @@ class Memory:
 
         return content
 
-
     def circularFit(self, size, pid):
         counter, final, initial = 0, 0, 0
         i = 0
         try:
-
             while i < self.memory_Size:
-
                 if self.memory_LastPosition is self.memory_Size:
                     self.memory_LastPosition = 0
-
                 if self.memory_Data[self.memory_LastPosition] is 0:
                     if counter is 0:
                         initial = self.memory_LastPosition
@@ -251,16 +236,13 @@ class Memory:
                 if counter is size:
                     final = self.memory_LastPosition
                     break
-
                 if self.memory_LastPosition is self.memory_Size - 1:
                     counter = 0
                     self.memory_LastPosition = 0
                     initial = 0
                 else:
                     self.memory_LastPosition += 1
-
                 i += 1
-
             for i in range(initial, final + 1):
                 self.memory_Data[i] = pid
 
@@ -277,4 +259,3 @@ class Memory:
         }
 
         return content
-
