@@ -87,22 +87,22 @@ class CtrlMemory():
                             if each.memory_Id == 0:
                                 #FirstFit
                                 content = Memory.firstFit(each, newProcess.process_Size, newProcess.process_PID)
-                                newProcess.process_Memories['First Fit'] = True
+                                newProcess.process_Memories['First Fit'] = content['position']
                                 self.view.showFitPosition(content['fit'], content['position'])
                             elif each.memory_Id == 1:
                                 #BestFit
                                 content = Memory.bestFit(each, newProcess.process_Size, newProcess.process_PID)
-                                newProcess.process_Memories['Best Fit'] = True
+                                newProcess.process_Memories['Best Fit'] = content['position']
                                 self.view.showFitPosition(content['fit'], content['position'])
                             elif each.memory_Id == 2:
                                 #WorstFit
                                 content = Memory.worstFit(each, newProcess.process_Size, newProcess.process_PID)
-                                newProcess.process_Memories['Worst Fit'] = True
+                                newProcess.process_Memories['Worst Fit'] = content['position']
                                 self.view.showFitPosition(content['fit'], content['position'])
                             else:
                                 #CircularFit
                                 content = Memory.circularFit(each, newProcess.process_Size, newProcess.process_PID)
-                                newProcess.process_Memories['Circular Fit'] = True
+                                newProcess.process_Memories['Circular Fit'] = content['position']
                                 self.view.showFitPosition(content['fit'], content['position'])
                 else:
                     self.view.processNotCreatedMessage()
@@ -153,14 +153,15 @@ class CtrlMemory():
                     return False
 
             allProcessList = Process.process_List
-            self.view.removeProcessChosen()
-            listProcessLessInformation()
 
             if not allProcessList:
                 self.view.noProcessesCreated()
                 self.view.clickToContinueMessage()
                 return
 
+
+            self.view.removeProcessChosen()
+            listProcessLessInformation()
 
             processId = self.view.removeProcessMessage()
 
