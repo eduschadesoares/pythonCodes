@@ -71,32 +71,36 @@ class View():
     def showProcesses(self, process, memories, validate):
         if validate:
             print("║ ╰──◌ PID %s" % process.process_PID)
-            print("║    ┝──◑ Name")
+            print("║    ┝──◐ Name")
             print("║    │  ╰──● %s" % process.process_Name)
-            print("║    ┝──◑ Size ")
+            print("║    ┝──◐ Size ")
             print("║    │  ╰──● %s KB" % process.process_Size)
-            print("║    ╰──◑ Memory ")
+            print("║    ╰──◐ Memory ")
             j = 0
             for key, value in memories.items():
                 if j is not len(memories) - 1:
-                    print("║       ┝──● %12s [%s]" % (key, value))
+                    print("║       ┝──◑ %s" % key)
+                    print("║       │  ╰─● Position: %s" % value)
                 else:
-                    print("║       ╰──● %12s [%s]" % (key, value))
+                    print("║       ╰──◑ %s" % key)
+                    print("║          ╰─● Position: %s" % value)
                 j += 1
 
         else:
             print("║ ┝──◌ PID %s" % process.process_PID)
-            print("║ │  ┝──◑ Name")
+            print("║ │  ┝──◐ Name")
             print("║ │  │  ╰──● %s" % process.process_Name)
-            print("║ │  ┝──◑ Size ")
+            print("║ │  ┝──◐ Size ")
             print("║ │  │  ╰──● %s KB" % process.process_Size)
-            print("║ │  ╰──◑ Memory ")
+            print("║ │  ╰──◐ Memory ")
             j = 0
             for key, value in memories.items():
                 if j is not len(memories) - 1:
-                    print("║ │     ┝──● %12s [%s]" % (key, value))
+                    print("║ │     ┝──◑ %s" % key)
+                    print("║ │     │  ╰─● Position: %s" % value)
                 else:
-                    print("║ │     ╰──● %12s [%s]" % (key, value))
+                    print("║ │     ╰──◑ %s" % value)
+                    print("║ │        ╰─● Position: %s" % value)
                 j += 1
 
             print("║ │")
