@@ -114,6 +114,7 @@ class Memory:
         return content
 
     def bestFit(self, size, pid):
+        initial, final = 0, 0
         flagFinal, flagInitial, sizeCounter = 0, 0, 0
         lastPosition = False
         shortestCounter = self.memory_MaxForProcess + 1
@@ -170,6 +171,7 @@ class Memory:
 
     def worstFit(self, size, pid):
         # Same of best fit
+        initial, final = 0, 0
         flagFinal, flagInitial, sizeCounter = 0, 0, 0
         lastPosition = False
         shortestCounter = self.memory_MaxForProcess + 1
