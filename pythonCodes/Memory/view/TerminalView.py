@@ -180,9 +180,10 @@ class View():
         print("║ │  ┝──◐ Memory size: %s KB" % memory.memory_Size)
         print("║ │  ┝──◐ Available size: %s KB" % memory.memory_Available)
         print("║ │  ┝──◐ Max size for process: %s KB" % memory.memory_MaxForProcess)
-        if len(memory.memory_ProcessQuantity) > 0:
-            print("║ │  ┝──◐ Process quantity: %s [" % (len(memory.memory_ProcessQuantity)), end="")
+        lenProcessQuantity = len(memory.memory_ProcessQuantity)
 
+        if lenProcessQuantity > 0:
+            print("║ │  ┝──◐ Process quantity: %s [" % lenProcessQuantity, end="")
             for i in memory.memory_ProcessQuantity:
                 if i is memory.memory_ProcessQuantity[-1]:
                     print("%s]" % i, end="")
