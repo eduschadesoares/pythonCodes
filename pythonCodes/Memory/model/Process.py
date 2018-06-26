@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#Process class here
+# Process class here
 
 class Process:
     process_List = []
@@ -21,6 +21,13 @@ class Process:
         Process.process_PID += 1
         Process.process_Num += 1
         self.__class__.process_List.append(self)
+
+    def memoryAssociated(self):
+        inMemory = []
+        for key, value in self.process_Memories.items():
+            if value:
+                inMemory.append(key)
+        return inMemory
 
     def __str__(self):
         return "Process \"%s\" - PID %s - Size %s" % (self.process_Name,
