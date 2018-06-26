@@ -7,42 +7,53 @@ class View():
 
     #ALERT MESSAGES
     def incorrectValueMessage(self):
-        print("Incorrect value")
+        print("║")
+        print("╠┅▶  Incorrect value")
 
     def invalidValueMessage(self):
-        print("Invalid value")
-
-    def processCreatedMessage(self):
-        print("")
+        print("║")
+        print("╠┅▶  Invalid value")
 
     def tryAgainMessage(self):
-        print("Try again!")
+        print("║")
+        print("╠┅▶  Try again!")
 
     # SUCCESS MESSAGES
     def processSuccessfullyRemoved(self, processPid):
-        print("Process %s was successfully removed" %(processPid))
+        print("║")
+        print("╠┅▶ ✓ Process %s was successfully removed" %(processPid))
 
     def successfullyCreatedMemoryMessage(self):
-        print("Memories was successfully created!")
+        print("║")
+        print("╠┅▶ ✓ Memories was successfully created!")
+
+    def successfullyCreatedProcessMessage(self, processName, processPid):
+        print("║")
+        print("╠┅▶ ✓ Process: \"%s\" - PID: %s was successfully created!" % (processName, processPid))
 
     # FAIL MESSAGES
     def cancelRemove(self):
-        print("Remotion is canceled")
+        print("║")
+        print("╠┅▶ ❎ Remotion is canceled")
 
     def failedToCreateMemoryMessage(self):
-        print("Memories couldn't be created!")
+        print("║")
+        print("╠┅▶ ❎ Memories couldn't be created!")
 
     def noProcessesCreated(self):
-        print("There is no process")
+        print("║")
+        print("╠┅▶ ❎ There is no process")
 
     def notAvailableMemoryMessage(self, memoryName):
-        print(" %12s - Error, not enough available memory to create this process" %(memoryName))
+        print("╠┅▶ ❎ %12s - Error, not enough available memory to create this process" %(memoryName))
 
     def processDoesntExist(self, processPID):
-        print("Process %s doesn't exist" %(processPID))
+        print("║")
+        print("╠┅▶ ❎ Process %s doesn't exist" %(processPID))
 
     def processNotCreatedMessage(self):
-        print("Process could not be created, no memory available for this size")
+        print("║")
+        print("╠┅▶ ❎ Process could not be created, no memory available for this size")
 
     # DISPLAY INFORMATION MESSAGES
     def showFitPosition(self, fit, position):
@@ -55,42 +66,66 @@ class View():
         else:
             suffix = 'th'
 
-        print(" %12s - created in the %s%s position" % (fit, position, suffix))
+        print("╠┅▶ ✓ %12s - created in the %s%s position" % (fit, position, suffix))
 
-    def showProcesses(self, process, memories):
-        print(" %s | Memory: [ " % process, end="")
+    def showProcesses(self, process, memories, validate):
+        if validate:
+            print("║ ╰──◌  %s | Memory: ⌗ " % process, end="")
+        else:
+            print("║ ┝──◌  %s | Memory: ⌗ " % process, end="")
         for i in memories:
             if i is not memories[-1]:
-                print("%s - " %i, end="")
+                print("%s ⌗ " %i, end="")
             else:
-                print("%s ]" %i)
-        #print("")
+                print("%s ⌗" %i)
 
-    def showProcessesLessInformation(self, process):
-        print("PID: %s - \"%s\"" %(process.process_PID, process.process_Name))
+    def showProcessesLessInformation(self, process, validate):
+        if validate:
+            print("║ ╰──◌ PID: %s - \"%s\"" % (process.process_PID, process.process_Name))
+        else:
+            print("║ ┝──◌ PID: %s - \"%s\"" %(process.process_PID, process.process_Name))
 
     #CHOICES
     def insertProcessChosen(self):
-        print("Create a process")
+        print("║")
+        print("╠┅▶ ⌛ Create a process")
 
     def listProcessChosen(self):
-        print("Dysplaying processes")
+        print("║")
+        print("╠┅▶ ⌛ Dysplaying processes")
 
     def removeProcessChosen(self):
-        print("Remove a process")
+        print("║")
+        print("╠┅▶ ⌛ Remove a process")
 
     def showMemoriesChosen(self):
-        print("Displaying memories")
+        print("║")
+        print("╠┅▶ ⌛ Displaying memories")
 
     #BASIC MESSAGES
+    def listProcessInformationHeader(self):
+        print("║")
+        print("╠═╤═┅▶ Process list")
+        print("║ │")
+
+    def listProcessLessInformationHeader(self):
+        print("║")
+        print("╠═╤═┅▶ Process list")
+        print("║ │")
+
     def programFinishMessage(self):
-        print("The program will exit!")
+        print("║")
+        print("╚┅▶ The program will exit! ㋡")
 
     def programStartMessage(self):
-        print("Initializing the \"Elefante\" program")
+        print("╔══════════════════════════════════════╗")
+        print("║  Initializing the Elefante® program  ║")
+        print("╠══════════════════════════════════════╝")
+        print("║")
 
     def showMemoryInformation(self, memory):
-        print(memory)
+        print("║")
+        print("╠┅▶  %s" % memory)
 
     #FORMATED MESSAGES
     def showFormattedMemoryCloseArray(self):
@@ -104,14 +139,16 @@ class View():
 
     #I/O MESSAGES
     def clickToContinueMessage(self):
-        print("Press enter to continue")
+        print("║")
+        print("╠┅▶ ⌨  Press enter to continue", end=" ")
         none = input()
 
     def confirmRemoveProcess(self, processName, processId):
         yes = ['y', 'yes', 'Yes', 'YEs', 'YES', 'yEs', 'yES', 'yeS']
         no = ['n', 'no', 'No', 'NO']
-        print("Do you really want to remove the process \"%s\" - PID %s?" % (processName, processId))
-        print("Type Y/Yes or N/No: ", end="")
+        print("║")
+        print("╠┅▶  Do you really want to remove the process \"%s\" - PID %s?" % (processName, processId))
+        print("╠┅▶ ⌨  Type Y/Yes or N/No: ", end="")
         try:
             answer = str(input())
             if answer in yes:
@@ -119,24 +156,29 @@ class View():
             if answer in no:
                 return False
             else:
-                print('Invalid answer')
+                print("║")
+                print('╠┅▶ ❎ Invalid answer')
                 return False
         except ValueError:
-            print('Irregular value')
+            print("║")
+            print('╠┅▶ ❎ Irregular value')
             return False
 
 
     def createProcessMessage(self):
-        print("Insert the process name:", end="")
+        print("║")
+        print("╠┅▶ ⌨  Insert the process name:", end="")
         processName = str(input())
-        print("Insert the process size:", end="")
+        print("╠┅▶ ⌨  Insert the process size:", end="")
         try:
             processSize = int(input())
             if processSize < 1:
-                print("Invalid value")
+                print("║")
+                print("╠┅▶ ❎ Invalid value")
                 return
         except ValueError:
-            print("Irregular value")
+            print("║")
+            print("╠┅▶ ❎ Irregular value")
             return
 
         #Returns a dict
@@ -145,39 +187,49 @@ class View():
             'size': processSize,
         }
 
+        print("║")
         return processInfo
 
     def insertMemSizeMessage(self):
-        print("Insert the memory size (KB). Insert 0 to exit:", end=" ")
+        print("╠┅▶ ⌨  Insert the memory size (KB). Insert 0 to exit:", end=" ")
         try:
             mem_Size = int(input())
         except ValueError:
-            print("Irregular value")
+            print("╠┅▶ ❎ Irregular value")
             return
         return mem_Size
 
     def removeProcessMessage(self):
-        print("Insert the process ID:", end="")
+        print("║")
+        print("╠┅▶ ⌨  Insert the process ID to remove:", end="")
         try:
             processID = int(input())
             if processID < 1:
-                print("Invalid value")
+                print("╠┅▶ ❎ Invalid value")
                 return
         except ValueError:
-            print("Irregular value")
+            print("╠┅▶ ❎ Irregular value")
             return
         return processID
 
     #MENU
     def menuMessage(self):
-        print("")
-        print(" MENU")
-        print(" 1 - Show Memories")
-        print(" 2 - Create Process")
-        print(" 3 - Remove Process")
-        print(" 4 - Show Process")
-        print(" 0 - Exit")
-        print("Insert an option:", end="")
+        print("║")
+        print("║   ╔════════════════════╗")
+        print("║   ║        MENU        ║")
+        print("║   ╠═══╤════════════════╣")
+        print("║   ║ 1 │ Show memories  ║")
+        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
+        print("║   ║ 2 │ Create process ║")
+        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
+        print("╠═══╣ 3 │ Remove process ║")
+        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
+        print("║   ║ 4 │ Show process   ║")
+        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
+        print("║   ║ 0 │ Exit           ║")
+        print("║   ╚═══╧════════════════╝")
+        print("║")
+        print("╠┅▶ ⌨  Insert an option:", end="")
         try:
             choice = int(input())
             if choice == 1:

@@ -106,6 +106,12 @@ class CtrlMemory():
                                 self.view.showFitPosition(content['fit'], content['position'])
                 else:
                     self.view.processNotCreatedMessage()
+                    self.view.clickToContinueMessage()
+                    return
+            else:
+                self.view.clickToContinueMessage()
+                return
+
 
             self.view.successfullyCreatedProcessMessage(newProcess.process_Name, newProcess.process_PID)
             self.view.clickToContinueMessage()
@@ -120,16 +126,22 @@ class CtrlMemory():
                 return
 
             self.view.listProcessChosen()
-
+            self.view.listProcessInformationHeader()
+            validate = False
             for each in allProcessList:
-                self.view.showProcesses(each, each.memoryAssociated())
+                if each is allProcessList[-1]:
+                    validate = True
+                self.view.showProcesses(each, each.memoryAssociated(), validate)
             self.view.clickToContinueMessage()
 
         def listProcessLessInformation():
             allProcessList = Process.process_List
-
+            self.view.listProcessLessInformationHeader()
+            validate = False
             for each in allProcessList:
-                self.view.showProcessesLessInformation(each)
+                if each is allProcessList[-1]:
+                    validate = True
+                self.view.showProcessesLessInformation(each, validate)
 
         def removeProcess():
 
@@ -141,7 +153,7 @@ class CtrlMemory():
                     return False
 
             allProcessList = Process.process_List
-
+            self.view.removeProcessChosen()
             listProcessLessInformation()
 
             if not allProcessList:
@@ -149,7 +161,6 @@ class CtrlMemory():
                 self.view.clickToContinueMessage()
                 return
 
-            self.view.removeProcessChosen()
 
             processId = self.view.removeProcessMessage()
 
