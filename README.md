@@ -27,7 +27,28 @@ git push
 -----
 
 # Memory
+### Dynamic process allocator simulator
+#### Allocation algorithms
 - First Fit
 - Best Fit 
 - Worst Fit
-- Circular Fit
+- Circular Fit / Next Fit
+
+#### Options
+
+* Create memory
+    * Any size (KB)
+* List memory
+    * Display size
+    * Display processes allocated
+    * Display available size
+    
+* Create process
+    * Type a name and size
+    * Check if there is available size in memories
+    
+* Remove process
+    * Type a pid and confirm to remove a process
+   
+* List process
+    * List all process and its informations
