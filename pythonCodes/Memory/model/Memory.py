@@ -17,8 +17,8 @@ class Memory:
         self.memory_LastPosition = 0
         self.memory_Data = []
 
-        self.process_Quantity = []
-        
+        self.memory_ProcessQuantity = []
+
 
         # Creates an array with 0
         for i in range(self.memory_Size):
@@ -37,7 +37,7 @@ class Memory:
                                                                                                             self.memory_Size,
                                                                                                             self.memory_Available,
                                                                                                             self.memory_MaxForProcess,
-                                                                                                            self.process_Quantity
+                                                                                                            self.memory_ProcessQuantity
                                                                                                             )
 
     def memoryName(self):
@@ -80,7 +80,7 @@ class Memory:
             if self.memory_Data[i] is pid:
                 self.memory_Data[i] = 0
 
-        self.process_Quantity.remove(pid)
+        self.memory_ProcessQuantity.remove(pid)
         self.verifyAvailableSpace()
 
     def firstFit(self, size, pid):
@@ -104,7 +104,7 @@ class Memory:
         except Exception as error:
             print(error)
 
-        self.process_Quantity.append(pid)
+        self.memory_ProcessQuantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -159,7 +159,7 @@ class Memory:
         except Exception as error:
             print(error)
 
-        self.process_Quantity.append(pid)
+        self.memory_ProcessQuantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -217,7 +217,7 @@ class Memory:
         except Exception as error:
             print(error)
 
-        self.process_Quantity.append(pid)
+        self.memory_ProcessQuantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -259,7 +259,7 @@ class Memory:
 
         self.memory_LastPosition += 1
 
-        self.process_Quantity.append(pid)
+        self.memory_ProcessQuantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
