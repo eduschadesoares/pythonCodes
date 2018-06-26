@@ -202,8 +202,17 @@ class View():
         print("║ │  │")
         print("║ │  ╰──◐ │", end="")
 
-    def showFormattedMemoryStep(self, step):
-        print(step, end="│")
+    def showFormattedMemoryStep(self, step, breakLine, breakLineWhen, i):
+        if breakLine:
+            if i is breakLineWhen:
+                print("\n║ │       │", end="")
+                print(step, end="│")
+                return True
+            print(step, end="│")
+            return False
+        else:
+            print(step, end="│")
+            return False
 
     #I/O MESSAGES
     def clickToContinueMessage(self):

@@ -49,13 +49,23 @@ class CtrlMemory():
             self.view.showMemoriesChosen()
             allMemoriesList = Memory.memory_List
 
+            self.view.showMemoryInformationHeader()
             #Print formatted memory information
             for each in allMemoriesList:
                 self.view.showMemoryInformation(each)
                 data = each.memory_Data
                 self.view.showFormattedMemoryOpenArray()
+                breakLine = False
+                breakLineWhen = 60
+                i = 0
                 for step in data:
-                    self.view.showFormattedMemoryStep(step)
+                    if len(data) > breakLineWhen:
+                        breakLine = True
+                    test = self.view.showFormattedMemoryStep(step, breakLine, breakLineWhen, i)
+                    if test:
+                        i = 0
+                    else:
+                        i += 1
                 self.view.showFormattedMemoryCloseArray()
             self.view.clickToContinueMessage()
 
