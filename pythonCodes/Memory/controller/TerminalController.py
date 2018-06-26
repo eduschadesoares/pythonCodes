@@ -121,7 +121,7 @@ class CtrlMemory():
             self.view.listProcessChosen()
 
             for each in allProcessList:
-                self.view.showProcesses(each, each.process_Memories)
+                self.view.showProcesses(each, each.memoryAssociated())
             self.view.clickToContinueMessage()
 
         def removeProcess():
@@ -146,6 +146,7 @@ class CtrlMemory():
 
                         allProcessList.remove(each)
                         self.view.processSuccessfullyRemoved(processId)
+                        self.view.clickToContinueMessage()
                         return
                     except Exception as error:
                         print(error)
