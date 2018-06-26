@@ -70,40 +70,58 @@ class View():
 
     def showProcesses(self, process, memories, validate):
         if validate:
-            print("║ ╰──◌ PID %s" % process.process_PID)
-            print("║    ┝──◐ Name")
-            print("║    │  ╰──● %s" % process.process_Name)
-            print("║    ┝──◐ Size ")
-            print("║    │  ╰──● %s KB" % process.process_Size)
-            print("║    ╰──◐ Memory ")
+            print("║ ╰──◌ PID ╭──────────────────────────────────────────║")
+            print("║    ╰──┰──┥ %3s                                      ║" % process.process_PID)
+            print("║       │  ╰──────────────────────────────────────────║")
+            print("║       ┝──◐  Name  ╭─────────────────────────────────║")
+            print("║       │  ╰────────┥  %30s ║" % process.process_Name)
+            print("║       ┝──◐  Size  ┝─────────────────────────────────║")
+            print("║       │  ╰────────┥                        %5s KB ║" % process.process_Size)
+            print("║       │           ╰─────────────────────────────────║")
+            print("║       ╰──◐ Memory                                   ║")
+            print("║          ╰────────╮                                 ║")
             j = 0
             for key, value in memories.items():
                 if j is not len(memories) - 1:
-                    print("║       ┝──◑ %s" % key)
-                    print("║       │  ╰──● Position: %s" % value)
+                    print("║                   │               ╭─────────────────║")
+                    print("║                   ┝───────────────╮   %12s  ║" % key)
+                    print("║                   │               │  Position: %4s ║" % value)
+                    print("║                   │               ╰─────────────────║")
                 else:
-                    print("║       ╰──◑ %s" % key)
-                    print("║          ╰──● Position: %s" % value)
+                    print("║                   │               ╭─────────────────║")
+                    print("║                   ╰───────────────╮   %12s  ║" % key)
+                    print("║                                   │  Position: %4s ║" % value)
+                    print("║                                   ╰─────────────────║")
+                    print("╠═════════════════════════════════════════════════════╝")
                 j += 1
 
         else:
-            print("║ ┝──◌ PID %s" % process.process_PID)
-            print("║ │  ┝──◐ Name")
-            print("║ │  │  ╰──● %s" % process.process_Name)
-            print("║ │  ┝──◐ Size ")
-            print("║ │  │  ╰──● %s KB" % process.process_Size)
-            print("║ │  ╰──◐ Memory ")
+            print("║ ┝──◌ PID ╭──────────────────────────────────────────║")
+            print("║ │  ╰──┰──┥ %3s                                      ║" % process.process_PID)
+            print("║ │     │  ╰──────────────────────────────────────────║")
+            print("║ │     ┝──◐  Name  ╭─────────────────────────────────║")
+            print("║ │     │  ╰────────┥  %30s ║" % process.process_Name)
+            print("║ │     ┝──◐  Size  ┝─────────────────────────────────║")
+            print("║ │     │  ╰────────┥                        %5s KB ║" % process.process_Size)
+            print("║ │     │           ╰─────────────────────────────────║")
+            print("║ │     ╰──◐ Memory                                   ║")
+            print("║ │        ╰────────╮                                 ║")
             j = 0
             for key, value in memories.items():
                 if j is not len(memories) - 1:
-                    print("║ │     ┝──◑ %s" % key)
-                    print("║ │     │  ╰──● Position: %s" % value)
+
+                    print("║ │                 │               ╭─────────────────║")
+                    print("║ │                 ┝───────────────╮   %12s  ║" % key)
+                    print("║ │                 │               │  Position: %4s ║" % value)
+                    print("║ │                 │               ╰─────────────────║")
                 else:
-                    print("║ │     ╰──◑ %s" % value)
-                    print("║ │        ╰──● Position: %s" % value)
+                    print("║ │                 │               ╭─────────────────║")
+                    print("║ │                 ╰───────────────╮   %12s  ║" % key)
+                    print("║ │                                 │  Position: %4s ║" % value)
+                    print("║ │                                 ╰─────────────────║")
+                    print("║ │                                                   ║")
                 j += 1
 
-            print("║ │")
 
 
     def showProcessesLessInformation(self, process, validate):
@@ -131,9 +149,10 @@ class View():
 
     #BASIC MESSAGES
     def listProcessInformationHeader(self):
-        print("║")
-        print("╠═╤═┅▶ Process list")
-        print("║ │")
+        print("║                  ╭──────────────╮                    ")
+        print("╠═╤════════════════┤ Process list ┝═══════════════════╗")
+        print("║ │                ╰──────────────╯                   ║")
+        print("║ │                                                   ║")
 
     def listProcessLessInformationHeader(self):
         print("║")
