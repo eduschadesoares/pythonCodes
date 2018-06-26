@@ -164,9 +164,9 @@ class View():
         print("╚┅▶ The program will exit! ㋡")
 
     def programStartMessage(self):
-        print("╔══════════════════════════════════════╗")
-        print("║  Initializing the Elefante® program  ║")
-        print("╠══════════════════════════════════════╝")
+        print("╔═════════════════════════════════════════════════════╗")
+        print("║          Initializing the Elefante® program         ║")
+        print("╠═════════════════════════════════════════════════════╝")
         print("║")
 
     def showMemoryInformation(self, memory):
@@ -261,19 +261,19 @@ class View():
     #MENU
     def menuMessage(self):
         print("║")
-        print("║   ╔════════════════════╗")
-        print("║   ║        MENU        ║")
-        print("║   ╠═══╤════════════════╣")
-        print("║   ║ 1 │ Show memories  ║")
-        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
-        print("║   ║ 2 │ Create process ║")
-        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
-        print("╠═══╣ 3 │ Remove process ║")
-        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
-        print("║   ║ 4 │ Show process   ║")
-        print("║   ╠━━━┿━━━━━━━━━━━━━━━━╣")
-        print("║   ║ 0 │ Exit           ║")
-        print("║   ╚═══╧════════════════╝")
+        print("║    ╔════════════════════════════════════════════════╗")
+        print("║    ║                      MENU                      ║")
+        print("║    ╠═════════╤══════════════════════════════════════╣")
+        print("║    ║    1    │             Show memories            ║")
+        print("║    ╠━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╣")
+        print("║    ║    2    │            Create process            ║")
+        print("║    ╠━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╣")
+        print("╠════╣    3    │            Remove process            ║")
+        print("║    ╠━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╣")
+        print("║    ║    4    │             Show process             ║")
+        print("║    ╠━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╣")
+        print("║    ║    0    │                 Exit                 ║")
+        print("║    ╚═════════╧══════════════════════════════════════╝")
         print("║")
         print("╠┅▶ ⌨  Insert an option:", end="")
         try:
