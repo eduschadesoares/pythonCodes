@@ -196,6 +196,7 @@ class View():
     def showFormattedMemoryCloseArray(self):
         print("")
         print("║ │")
+       #print("╠═╛")
 
     def showFormattedMemoryOpenArray(self):
         print("║ │  │")
