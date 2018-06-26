@@ -80,10 +80,10 @@ class View():
             for key, value in memories.items():
                 if j is not len(memories) - 1:
                     print("║       ┝──◑ %s" % key)
-                    print("║       │  ╰─● Position: %s" % value)
+                    print("║       │  ╰──● Position: %s" % value)
                 else:
                     print("║       ╰──◑ %s" % key)
-                    print("║          ╰─● Position: %s" % value)
+                    print("║          ╰──● Position: %s" % value)
                 j += 1
 
         else:
@@ -97,10 +97,10 @@ class View():
             for key, value in memories.items():
                 if j is not len(memories) - 1:
                     print("║ │     ┝──◑ %s" % key)
-                    print("║ │     │  ╰─● Position: %s" % value)
+                    print("║ │     │  ╰──● Position: %s" % value)
                 else:
                     print("║ │     ╰──◑ %s" % value)
-                    print("║ │        ╰─● Position: %s" % value)
+                    print("║ │        ╰──● Position: %s" % value)
                 j += 1
 
             print("║ │")
