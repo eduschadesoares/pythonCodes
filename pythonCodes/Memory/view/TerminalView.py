@@ -70,14 +70,34 @@ class View():
 
     def showProcesses(self, process, memories, validate):
         if validate:
-            print("║ ╰──◌  %s | Memory: ⌗ " % process, end="")
+            print("║ ╰──◌ PID %s" % process.process_PID)
+            print("║    ┝──◑ Name")
+            print("║    │  ╰──● %s" % process.process_Name)
+            print("║    ┝──◑ Size ")
+            print("║    │  ╰──● %s KB" % process.process_Size)
+            print("║    ╰──◑ Memory ")
+            for i in memories:
+                if i is not memories[-1]:
+                    print("║       ┝──● %s" % i)
+                else:
+                    print("║       ╰──● %s" % i)
+
         else:
-            print("║ ┝──◌  %s | Memory: ⌗ " % process, end="")
-        for i in memories:
-            if i is not memories[-1]:
-                print("%s ⌗ " %i, end="")
-            else:
-                print("%s ⌗" %i)
+            print("║ ┝──◌ PID %s" % process.process_PID)
+            print("║ │  ┝──◑ Name")
+            print("║ │  │  ╰──● %s" % process.process_Name)
+            print("║ │  ┝──◑ Size ")
+            print("║ │  │  ╰──● %s KB" % process.process_Size)
+            print("║ │  ╰──◑ Memory ")
+
+            for i in memories:
+                if i is not memories[-1]:
+                    print("║ │     ┝──● %s" % i)
+                else:
+                    print("║ │     ╰──● %s" % i)
+
+            print("║ │")
+
 
     def showProcessesLessInformation(self, process, validate):
         if validate:
