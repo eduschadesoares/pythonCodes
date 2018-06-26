@@ -169,19 +169,41 @@ class View():
         print("╠═════════════════════════════════════════════════════╝")
         print("║")
 
+    def showMemoryInformationHeader(self):
+        print("║                  ╭──────────────╮                    ")
+        print("╠═╤════════════════┤  Memory List ┝═══════════════════╗")
+        print("║ │                ╰──────────────╯                    ")
+        print("║ │                                                    ")
+
     def showMemoryInformation(self, memory):
-        print("║")
-        print("╠┅▶  %s" % memory)
+        print("║ ┝──◌ %s" % memory.memoryName())
+        print("║ │  ┝──◐ Memory size: %s KB" % memory.memory_Size)
+        print("║ │  ┝──◐ Available size: %s KB" % memory.memory_Available)
+        print("║ │  ┝──◐ Max size for process: %s KB" % memory.memory_MaxForProcess)
+        if len(memory.memory_ProcessQuantity) > 0:
+            print("║ │  ┝──◐ Process quantity: %s [" % (len(memory.memory_ProcessQuantity)), end="")
+
+            for i in memory.memory_ProcessQuantity:
+                if i is memory.memory_ProcessQuantity[-1]:
+                    print("%s]" % i, end="")
+                else:
+                    print("%s, " %i, end="")
+            print("")
+        else:
+            print("║ │  ┝──◐ Process quantity: %s" % (len(memory.memory_ProcessQuantity)))
 
     #FORMATED MESSAGES
     def showFormattedMemoryCloseArray(self):
-        print("]", end="" "\n\n")
+        print("")
+        print("║ │")
 
     def showFormattedMemoryOpenArray(self):
-        print("[ ", end="")
+        print("║ │  │")
+        print("║ │  │")
+        print("║ │  ╰──◐ │", end="")
 
     def showFormattedMemoryStep(self, step):
-        print(step, end=" ")
+        print(step, end="│")
 
     #I/O MESSAGES
     def clickToContinueMessage(self):
