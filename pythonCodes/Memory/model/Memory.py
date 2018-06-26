@@ -17,6 +17,9 @@ class Memory:
         self.memory_LastPosition = 0
         self.memory_Data = []
 
+        self.process_Quantity = []
+        
+
         # Creates an array with 0
         for i in range(self.memory_Size):
             # Some tests
@@ -30,11 +33,12 @@ class Memory:
     def __str__(self):
         # Returns size and names of each memory
         fitType = self.memoryName()
-        return " %s - Size: %s KB - Available: %s KB - Max size for process: %s KB" % (fitType,
-                                                                                     self.memory_Size,
-                                                                                     self.memory_Available,
-                                                                                     self.memory_MaxForProcess
-                                                                                     )
+        return " %s - Size: %s KB - Available: %s KB - Max size for process: %s KB Process quantity: %s" % (fitType,
+                                                                                                            self.memory_Size,
+                                                                                                            self.memory_Available,
+                                                                                                            self.memory_MaxForProcess,
+                                                                                                            self.process_Quantity
+                                                                                                            )
 
     def memoryName(self):
         if self.memory_Id == 0:
@@ -75,6 +79,8 @@ class Memory:
         for i in range(self.memory_Size):
             if self.memory_Data[i] is pid:
                 self.memory_Data[i] = 0
+
+        self.process_Quantity.remove(pid)
         self.verifyAvailableSpace()
 
     def firstFit(self, size, pid):
@@ -98,6 +104,7 @@ class Memory:
         except Exception as error:
             print(error)
 
+        self.process_Quantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -152,6 +159,7 @@ class Memory:
         except Exception as error:
             print(error)
 
+        self.process_Quantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -209,6 +217,7 @@ class Memory:
         except Exception as error:
             print(error)
 
+        self.process_Quantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
@@ -250,6 +259,7 @@ class Memory:
 
         self.memory_LastPosition += 1
 
+        self.process_Quantity.append(pid)
         self.verifyAvailableSpace()
 
         content = {
