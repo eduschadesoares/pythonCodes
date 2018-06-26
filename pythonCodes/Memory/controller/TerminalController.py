@@ -107,6 +107,7 @@ class CtrlMemory():
                 else:
                     self.view.processNotCreatedMessage()
 
+            self.view.successfullyCreatedProcessMessage(newProcess.process_Name, newProcess.process_PID)
             self.view.clickToContinueMessage()
 
 
