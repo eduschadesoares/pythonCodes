@@ -26,6 +26,9 @@ class View():
         print("Memories was successfully created!")
 
     # FAIL MESSAGES
+    def cancelRemove(self):
+        print("Remotion was canceled")
+
     def failedToCreateMemoryMessage(self):
         print("Memories couldn't be created!")
 
@@ -100,6 +103,25 @@ class View():
     def clickToContinueMessage(self):
         print("Press enter to continue")
         none = input()
+
+    def confirmRemoveProcess(self, processName, processId):
+        yes = ['y', 'yes', 'Yes', 'YES']
+        no = ['n', 'no', 'No', 'NO']
+        print("Do you really want to remove the process \"%s\" - PID %s?" %(processName, processId))
+        print("Type Y/Yes or N/No: ", end="")
+        try:
+            answer = str(input())
+            if answer in yes:
+                return True
+            if answer in no:
+                return False
+            else:
+                print('Invalid answer')
+                return False
+        except ValueError:
+            print('Irregular value')
+            return False
+
 
     def createProcessMessage(self):
         print("Insert the process name:", end="")

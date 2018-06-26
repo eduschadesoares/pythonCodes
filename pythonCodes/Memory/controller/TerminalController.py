@@ -125,6 +125,14 @@ class CtrlMemory():
             self.view.clickToContinueMessage()
 
         def removeProcess():
+
+            def confirmRemove(processName, processId):
+                confirmation = self.view.confirmRemoveProcess(processName, processId)
+                if confirmation:
+                    return True
+                else:
+                    return False
+
             allProcessList = Process.process_List
 
             if not allProcessList:
@@ -138,18 +146,26 @@ class CtrlMemory():
 
             for each in allProcessList:
                 if each.process_PID is processId:
-                    try:
-                        allMemoriesList = Memory.memory_List
 
-                        for each2 in allMemoriesList:
-                            each2.removeProcessFromMemory(processId)
+                    if confirmRemove(each.process_Name, processId):
 
-                        allProcessList.remove(each)
-                        self.view.processSuccessfullyRemoved(processId)
+                        try:
+                            allMemoriesList = Memory.memory_List
+
+                            for each2 in allMemoriesList:
+                                each2.removeProcessFromMemory(processId)
+
+                            allProcessList.remove(each)
+                            self.view.processSuccessfullyRemoved(processId)
+                            self.view.clickToContinueMessage()
+                            return
+                        except Exception as error:
+                            print(error)
+
+                    else:
+                        self.view.cancelRemove()
                         self.view.clickToContinueMessage()
                         return
-                    except Exception as error:
-                        print(error)
 
             self.view.processDoesntExist(processId)
             self.view.clickToContinueMessage()
