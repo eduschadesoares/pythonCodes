@@ -76,11 +76,13 @@ class View():
             print("║    ┝──◑ Size ")
             print("║    │  ╰──● %s KB" % process.process_Size)
             print("║    ╰──◑ Memory ")
-            for i in memories:
-                if i is not memories[-1]:
-                    print("║       ┝──● %s" % i)
+            j = 0
+            for key, value in memories.items():
+                if j is not len(memories) - 1:
+                    print("║       ┝──● %12s [%s]" % (key, value))
                 else:
-                    print("║       ╰──● %s" % i)
+                    print("║       ╰──● %12s [%s]" % (key, value))
+                j += 1
 
         else:
             print("║ ┝──◌ PID %s" % process.process_PID)
@@ -89,12 +91,13 @@ class View():
             print("║ │  ┝──◑ Size ")
             print("║ │  │  ╰──● %s KB" % process.process_Size)
             print("║ │  ╰──◑ Memory ")
-
-            for i in memories:
-                if i is not memories[-1]:
-                    print("║ │     ┝──● %s" % i)
+            j = 0
+            for key, value in memories.items():
+                if j is not len(memories) - 1:
+                    print("║ │     ┝──● %12s [%s]" % (key, value))
                 else:
-                    print("║ │     ╰──● %s" % i)
+                    print("║ │     ╰──● %12s [%s]" % (key, value))
+                j += 1
 
             print("║ │")
 
