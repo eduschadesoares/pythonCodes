@@ -13,20 +13,22 @@ class Process:
         self.process_Size = process_Size
         self.process_PID = Process.process_PID
         self.process_Memories = {
-            'First Fit'   : False,
-            'Best Fit'    : False,
-            'Worst Fit'   : False,
-            'Circular Fit': False,
+            'First Fit'   : 0,
+            'Best Fit'    : 0,
+            'Worst Fit'   : 0,
+            'Circular Fit': 0,
         }
         Process.process_PID += 1
         Process.process_Num += 1
+
         self.__class__.process_List.append(self)
 
     def memoryAssociated(self):
-        inMemory = []
+        inMemory = {}
         for key, value in self.process_Memories.items():
             if value:
-                inMemory.append(key)
+                inMemory.update({key: value})
+
         return inMemory
 
     def __str__(self):
