@@ -55,14 +55,12 @@ class View():
         print(" %12s - created in the %s%s position" % (fit, position, suffix))
 
     def showProcesses(self, process, memories):
-        inMemory = []
-        for key, value in memories.items():
-            if value:
-                inMemory.append(key)
-
         print(process, " is in ", end="")
-        for i in inMemory:
-            print("%s - " %i, end="")
+        for i in memories:
+            if i is not memories[-1]:
+                print("%s - " %i, end="")
+            else:
+                print("%s" %i)
         print("")
 
     #CHOICES
@@ -90,7 +88,7 @@ class View():
 
     #FORMATED MESSAGES
     def showFormattedMemoryCloseArray(self):
-        print("]", end="" "\n")
+        print("]", end="" "\n\n")
 
     def showFormattedMemoryOpenArray(self):
         print("[ ", end="")
