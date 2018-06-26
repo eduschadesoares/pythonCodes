@@ -30,7 +30,7 @@ class Memory:
     def __str__(self):
         # Returns size and names of each memory
         fitType = self.memoryName()
-        return " %s - Size: %s KB - Available: %s KB - Max size for process: %s" % (fitType,
+        return " %s - Size: %s KB - Available: %s KB - Max size for process: %s KB" % (fitType,
                                                                                      self.memory_Size,
                                                                                      self.memory_Available,
                                                                                      self.memory_MaxForProcess
