@@ -30,7 +30,7 @@ class Process:
         return inMemory
 
     def __str__(self):
-        return "Process \"%s\" - PID %s - Size %s" % (self.process_Name,
-                                                      self.process_PID,
-                                                      self.process_Size,
-                                                      )
+        return "PID: %s - Process \"%s\" - Size %sKB" % (self.process_PID,
+                                                               self.process_Name,
+                                                               self.process_Size,
+                                                               )

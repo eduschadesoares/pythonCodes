@@ -124,6 +124,12 @@ class CtrlMemory():
                 self.view.showProcesses(each, each.memoryAssociated())
             self.view.clickToContinueMessage()
 
+        def listProcessLessInformation():
+            allProcessList = Process.process_List
+
+            for each in allProcessList:
+                self.view.showProcessesLessInformation(each)
+
         def removeProcess():
 
             def confirmRemove(processName, processId):
@@ -135,6 +141,8 @@ class CtrlMemory():
 
             allProcessList = Process.process_List
 
+            listProcessLessInformation()
+
             if not allProcessList:
                 self.view.noProcessesCreated()
                 self.view.clickToContinueMessage()
@@ -143,6 +151,11 @@ class CtrlMemory():
             self.view.removeProcessChosen()
 
             processId = self.view.removeProcessMessage()
+
+            if not processId:
+                self.view.cancelRemove()
+                self.view.clickToContinueMessage()
+                return
 
             for each in allProcessList:
                 if each.process_PID is processId:

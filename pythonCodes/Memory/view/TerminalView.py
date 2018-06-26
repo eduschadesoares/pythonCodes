@@ -27,7 +27,7 @@ class View():
 
     # FAIL MESSAGES
     def cancelRemove(self):
-        print("Remotion was canceled")
+        print("Remotion is canceled")
 
     def failedToCreateMemoryMessage(self):
         print("Memories couldn't be created!")
@@ -58,13 +58,16 @@ class View():
         print(" %12s - created in the %s%s position" % (fit, position, suffix))
 
     def showProcesses(self, process, memories):
-        print(process, " is in ", end="")
+        print(" %s | Memory: [ " % process, end="")
         for i in memories:
             if i is not memories[-1]:
                 print("%s - " %i, end="")
             else:
-                print("%s" %i)
-        print("")
+                print("%s ]" %i)
+        #print("")
+
+    def showProcessesLessInformation(self, process):
+        print("PID: %s - \"%s\"" %(process.process_PID, process.process_Name))
 
     #CHOICES
     def insertProcessChosen(self):
@@ -105,9 +108,9 @@ class View():
         none = input()
 
     def confirmRemoveProcess(self, processName, processId):
-        yes = ['y', 'yes', 'Yes', 'YES']
+        yes = ['y', 'yes', 'Yes', 'YEs', 'YES', 'yEs', 'yES', 'yeS']
         no = ['n', 'no', 'No', 'NO']
-        print("Do you really want to remove the process \"%s\" - PID %s?" %(processName, processId))
+        print("Do you really want to remove the process \"%s\" - PID %s?" % (processName, processId))
         print("Type Y/Yes or N/No: ", end="")
         try:
             answer = str(input())
