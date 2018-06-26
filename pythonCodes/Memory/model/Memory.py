@@ -19,7 +19,6 @@ class Memory:
 
         self.memory_ProcessQuantity = []
 
-
         # Creates an array with 0
         for i in range(self.memory_Size):
             # Some tests
@@ -37,7 +36,7 @@ class Memory:
                                                                                                             self.memory_Size,
                                                                                                             self.memory_Available,
                                                                                                             self.memory_MaxForProcess,
-                                                                                                            self.memory_ProcessQuantity
+                                                                                                            self.memory_ProcessQuantity,
                                                                                                             )
 
     def memoryName(self):
