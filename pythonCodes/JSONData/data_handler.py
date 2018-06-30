@@ -20,7 +20,7 @@ class Data:
                     'music_release': music['release'],
                 }
                 for band in band_data:
-                    if music['id'] == band['id']:
+                    if music['band'] == band['id']:
                         music_list['music_band'] = band['name']
 
                 self.interface.list_music_view(music_list)
@@ -30,8 +30,23 @@ class Data:
 
 
         def listBands():
-            data = self.connection.get_band_list()
-            print(data)
+            band_data = self.connection.get_band_list()
+            genre_data = self.connection.get_genre_list()
+            record_data = self.connection.get_record_list()
+            for band in band_data:
+                band_list = {
+                    'band_name': band['name'],
+                }
+                for genre in genre_data:
+                    if band['genre'] == genre['id']:
+                        band_list['band_genre'] = genre['name']
+                for record in record_data:
+                    if band['record'] == record['id']:
+                        band_list['band_record'] = record['name']
+                self.interface.list_band_view(band_list)
+
+            self.interface.click_to_continue_view()
+            menu()
 
         def listGenres():
             data = self.connection.get_genre_list()

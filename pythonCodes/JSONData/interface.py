@@ -10,6 +10,13 @@ class Interface:
         print('Lançamento - {}'.format(music_list['music_release']))
         print('')
 
+    def list_band_view(self, band_list):
+        print('Nome - {}'.format(band_list['band_name']))
+        print('Gênero - {}'.format(band_list['band_genre']))
+        print('Gravadora - {}'.format(band_list['band_record']))
+        print('')
+
+
     def click_to_continue_view(self):
         print('Pressione enter para continuar')
         none = input()
