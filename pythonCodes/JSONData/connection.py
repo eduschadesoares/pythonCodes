@@ -21,3 +21,39 @@ class Connection:
             print("Could not connect to server!")
             print(error)
             return False
+
+    def get_music_list(self):
+        search = 'musics'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
+
+    def get_band_list(self):
+        search = 'bands'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
+
+    def get_genre_list(self):
+        search = 'genres'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
+
+    def get_record_list(self):
+        search = 'records'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
+
+    def get_playlist_list(self):
+        search = 'playlists'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
+
+    def get_music_list(self):
+        search = 'musics'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        data = requests.get(url).json()
+        return data
