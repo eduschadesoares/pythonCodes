@@ -15,12 +15,14 @@ class Connection:
         try:
             connection = requests.get(url)
             if connection:
-                print("Status: {}\nConnected to server!".format(connection.reason))
+                print("╔┅▶  Status: {}\n╠┅▶ ✓ Connected to server!".format(connection.reason))
             return True
         except Exception as error:
             print("Could not connect to server!")
             print(error)
             exit()
+
+# GET METHODS
 
     def get_music_list(self):
         search = 'musics'
@@ -66,3 +68,8 @@ class Connection:
         except Exception as error:
             print(error)
         return playlist_data
+
+# POST METHODS
+
+    def post_music(self):
+        pass

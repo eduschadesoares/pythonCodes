@@ -26,10 +26,10 @@ class Data:
                 self.interface.list_music_view(music_list)
 
             self.interface.click_to_continue_view()
-            menu()
+            menu_get_post()
 
 
-        def listBands():
+        def list_bands():
             band_data = self.connection.get_band_list()
             genre_data = self.connection.get_genre_list()
             record_data = self.connection.get_record_list()
@@ -46,9 +46,9 @@ class Data:
                 self.interface.list_band_view(band_list)
 
             self.interface.click_to_continue_view()
-            menu()
+            menu_get_post()
 
-        def listGenres():
+        def list_genres():
             genre_data = self.connection.get_genre_list()
             for genre in genre_data:
                 genre_list = {
@@ -57,9 +57,9 @@ class Data:
                 self.interface.list_genre_view(genre_list)
 
             self.interface.click_to_continue_view()
-            menu()
+            menu_get_post()
 
-        def listRecords():
+        def list_records():
             record_data = self.connection.get_record_list()
             for record in record_data:
                 record_list = {
@@ -68,9 +68,9 @@ class Data:
                 self.interface.list_record_view(record_list)
 
             self.interface.click_to_continue_view()
-            menu()
+            menu_get_post()
 
-        def listPlaylists():
+        def list_playlists():
             playlist_data = self.connection.get_playlist_list()
             music_data = self.connection.get_music_list()
             band_data = self.connection.get_band_list()
@@ -88,26 +88,63 @@ class Data:
                                     self.interface.list_playlist_music_view(music['name'], band['name'])
 
             self.interface.click_to_continue_view()
-            menu()
+            menu_get_post()
 
-
-        def menu():
-            choice = self.interface.menu_view()
-            if choice is 1:
+        def menu_get():
+            menu_result_option = self.interface.menu_get()
+            if menu_result_option < 0:
+                self.interface.incorrect_value_message()
+                self.interface.try_again_message()
+                menu_get()
+            elif menu_result_option is 1:
                 list_musics()
-            elif choice is 2:
-                listBands()
-            elif choice is 3:
-                listGenres()
-            elif choice is 4:
-                listRecords()
-            elif choice is 5:
-                listPlaylists()
-            elif choice is 0:
+            elif menu_result_option is 2:
+                list_bands()
+            elif menu_result_option is 3:
+                list_genres()
+            elif menu_result_option is 4:
+                list_records()
+            elif menu_result_option is 5:
+                list_playlists()
+            elif menu_result_option is 6:
+                menu_get_post()
+
+        def menu_post():
+            menu_result_option = self.interface.menu_post()
+
+            if menu_result_option < 0:
+                self.interface.incorrect_value_message()
+                self.interface.try_again_message()
+                menu_post()
+            elif menu_result_option is 1:
+                list_musics()
+            elif menu_result_option is 2:
+                list_bands()
+            elif menu_result_option is 3:
+                list_genres()
+            elif menu_result_option is 4:
+                list_records()
+            elif menu_result_option is 5:
+                list_playlists()
+            elif menu_result_option is 6:
+                menu_get_post()
+
+        def menu_get_post():
+            menu_result_option = self.interface.menu_get_post()
+
+            if menu_result_option is 0:
+                self.interface.finish_message()
                 exit()
+            elif menu_result_option < 0:
+                self.interface.incorrect_value_message()
+                self.interface.try_again_message()
+                menu_get_post()
+            elif menu_result_option is 1:
+                menu_get()
             else:
-                menu()
-        menu()
+                menu_post()
+
+        menu_get_post()
 
     def __init__(self):
         self.connection = Connection()

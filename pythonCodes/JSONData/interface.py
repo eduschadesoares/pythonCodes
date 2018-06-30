@@ -33,17 +33,116 @@ class Interface:
               ''.format(music, band))
 
     def click_to_continue_view(self):
-        print('Pressione enter para continuar')
+        print('╠┅▶ ⌨ Pressione enter para continuar')
         none = input()
 
-    def menu_view(self):
-        print("Menu")
-        print("1 - Listar Músicas")
-        print("2 - Listar Bandas")
-        print("3 - Listar Gêneros")
-        print("4 - Listar Gravadoras")
-        print("5 - Listar Playlists")
-        print("0 - Sair")
+    def finish_message(self):
+        print("║")
+        print("╚┅▶ O programa será encerrado! ㋡")
 
-        choice = int(input())
-        return choice
+    def incorrect_value_message(self):
+        print("╠┅▶  Valor incorreto")
+
+    def invalid_value_message(self):
+        print("╠┅▶  Valor inválido")
+
+    def try_again_message(self):
+        print("╠┅▶  Tente novamente!")
+
+    def menu_get_post(self):
+        print("╠════════════════════════╗")
+        print("║          MENU          ║")
+        print("╠═════╤══════════════════╣")
+        print("║  1  │       GET        ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  2  │       POST       ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  0  │       EXIT       ║")
+        print("╠═════╧══════════════════╝")
+        print("╠┅▶ ⌨  Escolha uma opção:", end="")
+        try:
+            choice = int(input())
+            if choice == 1:
+                return 1
+            elif choice == 2:
+                return 2
+            elif choice == 0:
+                return 0
+            else:
+                return -1
+        except ValueError:
+            return -1
+
+    def menu_get(self):
+        print("╠════════════════════════╗")
+        print("║        MENU GET        ║")
+        print("╠═════╤══════════════════╣")
+        print("║  1  │      Músicas     ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  2  │      Bandas      ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  3  │      Gêneros     ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  4  │    Gravadoras    ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  5  │     Playlists    ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  6  │      Voltar      ║")
+        print("╠═════╧══════════════════╝")
+        print("╠┅▶ ⌨  Escolha uma opção:", end="")
+        try:
+            choice = int(input())
+            if choice == 1:
+                return 1
+            elif choice == 2:
+                return 2
+            elif choice == 3:
+                return 3
+            elif choice == 4:
+                return 4
+            elif choice == 5:
+                return 5
+            elif choice == 6:
+                return 6
+            else:
+                return -1
+        except ValueError:
+            return -1
+
+    def menu_post(self):
+        print("╠════════════════════════╗")
+        print("║        MENU POST       ║")
+        print("╠═════╤══════════════════╣")
+        print("║  1  │ Inserir Músicas  ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  2  │ Inserir Bandas   ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  3  │ Inserir Gêneros  ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  4  │Inserir Gravadora ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  5  │Inserir Playlists ║")
+        print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
+        print("║  6  │      Voltar      ║")
+        print("╠═════╧══════════════════╝")
+        print("╠┅▶ ⌨  Escolha uma opção:", end="")
+        try:
+            choice = int(input())
+            if choice == 1:
+                return 1
+            elif choice == 2:
+                return 2
+            elif choice == 3:
+                return 3
+            elif choice == 4:
+                return 4
+            elif choice == 5:
+                return 5
+            elif choice == 6:
+                return 6
+            elif choice == 0:
+                return 0
+            else:
+                return -1
+        except ValueError:
+            return -1
