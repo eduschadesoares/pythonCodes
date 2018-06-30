@@ -52,3 +52,11 @@ git push
    
 * List process
     * List all process and its informations
+    
+-----
+
+# JSONData
+### Program to get a JSON provided in localhost
+### Works alongside with [my django rest framework project](https://github.com/eduschadesoares/djangoCodes)
+
+* Get a JSON in localhost and handle it to show in the interface
