@@ -15,7 +15,7 @@ class Connection:
         try:
             connection = requests.get(url)
             if connection:
-                print("Connected to server!")
+                print("Status: {}\nConnected to server!".format(connection.reason))
             return True
         except Exception as error:
             print("Could not connect to server!")
