@@ -16,6 +16,9 @@ class Interface:
         print('Gravadora - {}'.format(band_list['band_record']))
         print('')
 
+    def list_genre_view(self, genre_list):
+        print('Nome - {}'.format(genre_list['genre_name']))
+
 
     def click_to_continue_view(self):
         print('Pressione enter para continuar')

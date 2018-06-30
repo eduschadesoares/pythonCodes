@@ -49,8 +49,15 @@ class Data:
             menu()
 
         def listGenres():
-            data = self.connection.get_genre_list()
-            print(data)
+            genre_data = self.connection.get_genre_list()
+            for genre in genre_data:
+                genre_list = {
+                    'genre_name': genre['name']
+                }
+                self.interface.list_genre_view(genre_list)
+
+            self.interface.click_to_continue_view()
+            menu()
 
         def listRecords():
             data = self.connection.get_record_list()
