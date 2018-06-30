@@ -3,37 +3,65 @@
 
 class Interface:
 
+    def list_music_view_header(self):
+        print("║")
+        print("║   Músicas")
+        print("║   {0:40}".format('Nome'), end=' ')
+        print(" {0:40}".format('Banda'), end=' ')
+        print(" {0:20}".format('Gravadora'), end=' ')
+        print(" {}".format('Lançamento'))
+
+    def list_band_view_header(self):
+        print("║")
+        print("║   Bandas")
+        print("║   {0:40}".format('Nome'), end=' ')
+        print(" {0:40}".format('Gênero'), end=' ')
+        print("{}".format('Gravadora'))
+
+    def list_genre_view_header(self):
+        print("║")
+        print("║   Gêneros")
+        print("║   {0:40}".format('Nome'))
+
+
+    def list_record_view_header(self):
+        print("║")
+        print("║   Gravadoras")
+        print("║   {0:40}".format('Nome'))
+
+    def list_playlist_view_header(self):
+        print("║")
+        print("║   Playlists")
+
     def list_music_view(self, music_list):
-        print('Nome - {}'.format(music_list['music_name']), end=' ')
-        print('Banda - {}'.format(music_list['music_band']), end=' ')
-        print('Duração - {}'.format(music_list['music_duration']), end=' ')
-        print('Lançamento - {}'.format(music_list['music_release']), end=' ')
+        print('║ ━ {0:40} '.format(music_list['music_name']), end=' ')
+        print('{0:40} '.format(music_list['music_band']), end=' ')
+        print('{0:20} '.format(music_list['music_duration']), end=' ')
+        print('{0:20}'.format(music_list['music_release']), end=' ')
         print('')
 
     def list_band_view(self, band_list):
-        print('Nome - {}'.format(band_list['band_name']))
-        print('Gênero - {}'.format(band_list['band_genre']))
-        print('Gravadora - {}'.format(band_list['band_record']))
+        print('║ ━ {0:40} '.format(band_list['band_name']), end=' ')
+        print('{0:40}'.format(band_list['band_genre']), end=' ')
+        print('{}'.format(band_list['band_record']), end=' ')
         print('')
 
     def list_genre_view(self, genre_list):
-        print('Nome - {}'.format(genre_list['genre_name']))
-        print('')
+        print('║ ━ {0:40}'.format(genre_list['genre_name']))
 
     def list_record_view(self, record_list):
-        print('Nome - {}'.format(record_list['record_name']))
-        print('')
+        print('║ ━ {0:40}'.format(record_list['record_name']))
 
     def list_playlist_view(self, playlist_list):
-        print('')
-        print('Playlist - {}'.format(playlist_list['playlist_name']))
+        print("║")
+        print('║  {0:40}'.format(playlist_list['playlist_name']))
 
     def list_playlist_music_view(self, music, band):
-        print('Música - {} - {}'
-              ''.format(music, band))
+        print('║  ━ {0:40}'.format(music), band)
 
     def click_to_continue_view(self):
-        print('╠┅▶ ⌨ Pressione enter para continuar')
+        print("║")
+        print('╠┅▶ ⌨  Pressione enter para continuar', end='')
         none = input()
 
     def finish_message(self):

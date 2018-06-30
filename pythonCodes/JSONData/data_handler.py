@@ -13,6 +13,7 @@ class Data:
         def list_musics():
             music_data = self.connection.get_music_list()
             band_data = self.connection.get_band_list()
+            self.interface.list_music_view_header()
             for music in music_data:
                 music_list = {
                     'music_name': music['name'],
@@ -32,6 +33,7 @@ class Data:
             band_data = self.connection.get_band_list()
             genre_data = self.connection.get_genre_list()
             record_data = self.connection.get_record_list()
+            self.interface.list_band_view_header()
             for band in band_data:
                 band_list = {
                     'band_name': band['name'],
@@ -49,6 +51,7 @@ class Data:
 
         def list_genres():
             genre_data = self.connection.get_genre_list()
+            self.interface.list_genre_view_header()
             for genre in genre_data:
                 genre_list = {
                     'genre_name': genre['name']
@@ -60,6 +63,7 @@ class Data:
 
         def list_records():
             record_data = self.connection.get_record_list()
+            self.interface.list_record_view_header()
             for record in record_data:
                 record_list = {
                     'record_name': record['name']
@@ -73,6 +77,7 @@ class Data:
             playlist_data = self.connection.get_playlist_list()
             music_data = self.connection.get_music_list()
             band_data = self.connection.get_band_list()
+            self.interface.list_playlist_view_header()
 
             for playlist in playlist_data:
                 playlist_list = {
@@ -101,7 +106,7 @@ class Data:
         def menu_get():
             menu_result_option = self.interface.menu_get()
             if menu_result_option == 0:
-                self.interface.finish_message() 
+                self.interface.finish_message()
                 exit()
             if menu_result_option < 0:
                 self.interface.incorrect_value_message()
