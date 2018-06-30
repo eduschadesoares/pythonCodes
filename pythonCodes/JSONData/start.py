@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
-sys.path.append('..')
-
-from connection import Connection
+from data_handler import Data
 
 if __name__ == '__main__':
-    connect = Connection()
-
+    data_handler = Data()
 else:
     pass
