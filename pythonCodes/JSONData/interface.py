@@ -3,7 +3,18 @@
 
 class Interface:
 
-    def menu(self):
+    def list_music_view(self, music_list):
+        print('Nome - {}'.format(music_list['music_name']))
+        print('Banda - {}'.format(music_list['music_band']))
+        print('Duração - {}'.format(music_list['music_duration']))
+        print('Lançamento - {}'.format(music_list['music_release']))
+        print('')
+
+    def click_to_continue_view(self):
+        print('Pressione enter para continuar')
+        none = input()
+
+    def menu_view(self):
         print("Menu")
         print("1 - Listar Músicas")
         print("2 - Listar Bandas")
