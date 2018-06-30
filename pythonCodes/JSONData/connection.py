@@ -26,43 +26,43 @@ class Connection:
         search = 'musics'
         url = 'http://{}:{}/{}'.format(localhost, port, search)
         try:
-            data = requests.get(url).json()
+            music_data = requests.get(url).json()
         except Exception as error:
             print(error)
-        return data
+        return music_data
 
     def get_band_list(self):
         search = 'bands'
         url = 'http://{}:{}/{}'.format(localhost, port, search)
         try:
-            data = requests.get(url).json()
+            band_data = requests.get(url).json()
         except Exception as error:
             print(error)
-        return data
+        return band_data
 
     def get_genre_list(self):
         search = 'genres'
         url = 'http://{}:{}/{}'.format(localhost, port, search)
         try:
-            data = requests.get(url).json()
+            genre_data = requests.get(url).json()
         except Exception as error:
             print(error)
-        return data
+        return genre_data
 
     def get_record_list(self):
         search = 'records'
         url = 'http://{}:{}/{}'.format(localhost, port, search)
         try:
-            data = requests.get(url).json()
+            record_data = requests.get(url).json()
         except Exception as error:
             print(error)
-        return data
+        return record_data
 
     def get_playlist_list(self):
         search = 'playlists'
         url = 'http://{}:{}/{}'.format(localhost, port, search)
         try:
-            data = requests.get(url).json()
+            playlist_data = requests.get(url).json()
         except Exception as error:
             print(error)
-        return data
+        return playlist_data

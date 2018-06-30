@@ -60,12 +60,36 @@ class Data:
             menu()
 
         def listRecords():
-            data = self.connection.get_record_list()
-            print(data)
+            record_data = self.connection.get_record_list()
+            for record in record_data:
+                record_list = {
+                    'record_name': record['name']
+                }
+                self.interface.list_record_view(record_list)
+
+            self.interface.click_to_continue_view()
+            menu()
 
         def listPlaylists():
-            data = self.connection.get_playlist_list()
-            print(data)
+            playlist_data = self.connection.get_playlist_list()
+            music_data = self.connection.get_music_list()
+            band_data = self.connection.get_band_list()
+
+            for playlist in playlist_data:
+                playlist_list = {
+                    'playlist_name': playlist['name']
+                }
+                self.interface.list_playlist_view(playlist_list)
+                for music in music_data:
+                    for each in playlist['music']:
+                        if each is music['id']:
+                            for band in band_data:
+                                if music['band'] is band['id']:
+                                    self.interface.list_playlist_music_view(music['name'], band['name'])
+
+            self.interface.click_to_continue_view()
+            menu()
+
 
         def menu():
             choice = self.interface.menu_view()
