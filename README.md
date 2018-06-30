@@ -60,3 +60,5 @@ git push
 ### Works alongside with [my django rest framework project](https://github.com/eduschadesoares/djangoCodes)
 
 * Get a JSON in localhost and handle it to show in the interface
+
+-----
