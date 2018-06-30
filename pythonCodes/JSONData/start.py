@@ -5,5 +5,6 @@ from data_handler import Data
 
 if __name__ == '__main__':
     data_handler = Data()
+    data_handler.start_program()
 else:
     pass
