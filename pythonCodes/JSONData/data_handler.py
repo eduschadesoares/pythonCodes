@@ -10,9 +10,24 @@ from interface import Interface
 class Data:
     def start_program(self):
 
-        def listMusics():
-            data = self.connection.get_music_list()
-            print(data)
+        def list_musics():
+            music_data = self.connection.get_music_list()
+            band_data = self.connection.get_band_list()
+            for music in music_data:
+                music_list = {
+                    'music_name': music['name'],
+                    'music_duration': music['duration'],
+                    'music_release': music['release'],
+                }
+                for band in band_data:
+                    if music['id'] == band['id']:
+                        music_list['music_band'] = band['name']
+
+                self.interface.list_music_view(music_list)
+
+            self.interface.click_to_continue_view()
+            menu()
+
 
         def listBands():
             data = self.connection.get_band_list()
@@ -31,9 +46,9 @@ class Data:
             print(data)
 
         def menu():
-            choice = self.interface.menu()
+            choice = self.interface.menu_view()
             if choice is 1:
-                listMusics()
+                list_musics()
             elif choice is 2:
                 listBands()
             elif choice is 3:
@@ -44,9 +59,8 @@ class Data:
                 listPlaylists()
             elif choice is 0:
                 exit()
-
-            menu()
-
+            else:
+                menu()
         menu()
 
     def __init__(self):
