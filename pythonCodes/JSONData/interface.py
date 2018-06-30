@@ -49,13 +49,39 @@ class Interface:
     def try_again_message(self):
         print("╠┅▶  Tente novamente!")
 
+    def insert_music(self):
+        print("╠┅▶  Inserir música")
+        print("║")
+        try:
+            print("╠┅▶ ⌨  Nome da música: ", end="")
+            music_name = str(input())
+            print("╠┅▶ ⌨  Banda: ", end="")
+            music_band = int(input())
+            print("╠┅▶ ⌨  Duração: ", end="")
+            music_duration = str(input())
+            print("╠┅▶ ⌨  Lançamento: ", end="")
+            music_release = str(input())
+        except ValueError:
+            print("║")
+            print("╠┅▶ ❎ Valor irregular")
+            return
+
+        music_info = {
+            'name': music_name,
+            'duration': music_duration,
+            'release': music_release,
+            'band': music_band,
+        }
+
+        return music_info
+
     def menu_get_post(self):
         print("╠════════════════════════╗")
         print("║          MENU          ║")
         print("╠═════╤══════════════════╣")
         print("║  1  │       GET        ║")
         print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
-        print("║  2  │       POST       ║")
+        print("║     │                  ║")
         print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
         print("║  0  │       EXIT       ║")
         print("╠═════╧══════════════════╝")
@@ -87,7 +113,7 @@ class Interface:
         print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
         print("║  5  │     Playlists    ║")
         print("╠━━━━━┿━━━━━━━━━━━━━━━━━━╣")
-        print("║  6  │      Voltar      ║")
+        print("║  0  │       Sair       ║")
         print("╠═════╧══════════════════╝")
         print("╠┅▶ ⌨  Escolha uma opção:", end="")
         try:
@@ -102,8 +128,8 @@ class Interface:
                 return 4
             elif choice == 5:
                 return 5
-            elif choice == 6:
-                return 6
+            elif choice == 0:
+                return 0
             else:
                 return -1
         except ValueError:

@@ -26,8 +26,7 @@ class Data:
                 self.interface.list_music_view(music_list)
 
             self.interface.click_to_continue_view()
-            menu_get_post()
-
+            menu_get()
 
         def list_bands():
             band_data = self.connection.get_band_list()
@@ -46,7 +45,7 @@ class Data:
                 self.interface.list_band_view(band_list)
 
             self.interface.click_to_continue_view()
-            menu_get_post()
+            menu_get()
 
         def list_genres():
             genre_data = self.connection.get_genre_list()
@@ -57,7 +56,7 @@ class Data:
                 self.interface.list_genre_view(genre_list)
 
             self.interface.click_to_continue_view()
-            menu_get_post()
+            menu_get()
 
         def list_records():
             record_data = self.connection.get_record_list()
@@ -68,7 +67,7 @@ class Data:
                 self.interface.list_record_view(record_list)
 
             self.interface.click_to_continue_view()
-            menu_get_post()
+            menu_get()
 
         def list_playlists():
             playlist_data = self.connection.get_playlist_list()
@@ -88,10 +87,22 @@ class Data:
                                     self.interface.list_playlist_music_view(music['name'], band['name'])
 
             self.interface.click_to_continue_view()
-            menu_get_post()
+            menu_get()
+
+        def post_music():
+            music_info = self.interface.insert_music()
+
+            if music_info != None:
+                self.connection.post_music(music_info)
+            else:
+                self.interface.try_again_message()
+                self.interface.click_to_continue_view()
 
         def menu_get():
             menu_result_option = self.interface.menu_get()
+            if menu_result_option == 0:
+                self.interface.finish_message() 
+                exit()
             if menu_result_option < 0:
                 self.interface.incorrect_value_message()
                 self.interface.try_again_message()
@@ -107,7 +118,7 @@ class Data:
             elif menu_result_option is 5:
                 list_playlists()
             elif menu_result_option is 6:
-                menu_get_post()
+                menu_get()
 
         def menu_post():
             menu_result_option = self.interface.menu_post()
@@ -117,7 +128,7 @@ class Data:
                 self.interface.try_again_message()
                 menu_post()
             elif menu_result_option is 1:
-                list_musics()
+                post_music()
             elif menu_result_option is 2:
                 list_bands()
             elif menu_result_option is 3:
@@ -144,7 +155,7 @@ class Data:
             else:
                 menu_post()
 
-        menu_get_post()
+        menu_get()
 
     def __init__(self):
         self.connection = Connection()

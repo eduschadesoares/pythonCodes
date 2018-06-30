@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import requests
+import requests, json
 
 localhost = '127.0.0.1'
 port = '9000'
@@ -71,5 +71,12 @@ class Connection:
 
 # POST METHODS
 
-    def post_music(self):
-        pass
+    def post_music(self, music_info):
+        search = 'musics/'
+        url = 'http://{}:{}/{}'.format(localhost, port, search)
+        try:
+            playlist_data = requests.post(url, music_info)
+            print(playlist_data.reason)
+
+        except Exception as error:
+            print(error)
