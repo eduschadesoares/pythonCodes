@@ -8,7 +8,7 @@ class Interface:
         print("║   Músicas")
         print("║   {0:40}".format('Nome'), end=' ')
         print(" {0:40}".format('Banda'), end=' ')
-        print(" {0:20}".format('Gravadora'), end=' ')
+        print(" {0:20}".format('Duração'), end=' ')
         print(" {}".format('Lançamento'))
 
     def list_band_view_header(self):
