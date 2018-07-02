@@ -70,6 +70,7 @@ class Connection:
         return playlist_data
 
 # POST METHODS
+# not working yet
 
     def post_music(self, music_info):
         search = 'musics/'
