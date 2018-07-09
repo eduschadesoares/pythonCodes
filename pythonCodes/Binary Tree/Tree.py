@@ -9,6 +9,9 @@ class Tree:
         self.data = data
         self.counter = 1
 
+    def __str__(self):
+        return "%s" % self.data
+
     def insert(self, data):
         if self.data:
             if data < self.data:
@@ -37,5 +40,7 @@ class Tree:
 
 root = Tree(12)
 root.insert(9)
+root.insert(13)
 root.insert(12)
+root.insert(4)
 root.printTree()
