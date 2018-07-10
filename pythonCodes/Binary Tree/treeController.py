@@ -4,7 +4,7 @@
 from fileHandler import File
 from tree import Tree
 
-import getch, keyboard
+import getch, keyboard, os
 
 
 
@@ -28,6 +28,7 @@ class Controller:
             word = []
             while True:
                 char = getch.getch()
+                os.system('clear')
                 try:
                     if char == '\n':
                         break

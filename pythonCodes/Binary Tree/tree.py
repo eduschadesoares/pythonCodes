@@ -34,12 +34,21 @@ class Tree:
         if self.left:
             self.left.printTree()
         # print(self.data, self.counter)
-        print(self.data)
+        # print(self.data)
         if self.right:
             self.right.printTree()
 
     def searchTree(self, word):
-        
+        if self.left:
+            self.left.searchTree(word)
+
+        type = "".join(str(x) for x in word)
+        size = len(type)
+        if type in self.data[:size]:
+            print(self.data)
+
+        if self.right:
+            self.right.searchTree(word)
 
 
 
