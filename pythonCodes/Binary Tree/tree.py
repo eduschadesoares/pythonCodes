@@ -38,6 +38,9 @@ class Tree:
         if self.right:
             self.right.printTree()
 
+    def findTree(self):
+        pass
+
 
 
 # root = Tree(12)
