@@ -4,24 +4,42 @@
 from fileHandler import File
 from tree import Tree
 
+import getch, keyboard
+
+
 
 class Controller:
 
     def start(self):
-        def getWords():
+        tree = Tree("example")
+        def get_words():
             data = self.file.readFile()
             if data:
                 root = True
                 for line in data:
                     line = line.rstrip('\n')  # Remove \n
-                    if root:
-                        tree = Tree(line)
-                        root = False
-                    else:
-                        tree.insert(line)
+                    tree.insert(line)
                 tree.printTree()
             else:
                 print("Sem palavras")
+
+
+        def find_words():
+            word = []
+            while True:
+                char = getch.getch()
+                try:
+                    if char == '\n':
+                        break
+                    word.append(char)
+                    tree.searchTree(word)
+                except Exception as error:
+                    print(error)
+                    break
+            # print(word)
+
+
+
 
         """def insertWord():
             word = str(input("Word to insert: "))
@@ -30,8 +48,8 @@ class Controller:
             # data = self.file.readFile()
             # print(data) """
 
-        getWords()
-
+        get_words()
+        find_words()
         # insertWord()
 
     def __init__(self):

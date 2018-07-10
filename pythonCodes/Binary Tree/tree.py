@@ -38,8 +38,8 @@ class Tree:
         if self.right:
             self.right.printTree()
 
-    def findTree(self):
-        pass
+    def searchTree(self, word):
+        
 
 
 
