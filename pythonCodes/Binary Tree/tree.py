@@ -3,6 +3,7 @@
 
 
 class Tree:
+
     def __init__(self, data):
         self.left = None
         self.right = None
@@ -32,15 +33,16 @@ class Tree:
     def printTree(self):
         if self.left:
             self.left.printTree()
-        print(self.data, self.counter)
+        # print(self.data, self.counter)
+        print(self.data)
         if self.right:
             self.right.printTree()
 
 
 
-root = Tree(12)
-root.insert(9)
-root.insert(13)
-root.insert(12)
-root.insert(4)
-root.printTree()
+# root = Tree(12)
+# root.insert(9)
+# root.insert(13)
+# root.insert(12)
+# root.insert(4)
+# root.printTree()
