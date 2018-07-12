@@ -26,7 +26,7 @@ git push
 
 -----
 
-# Memory
+# [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
 ### Dynamic process allocator simulator
 #### Allocation algorithms
 - First Fit
