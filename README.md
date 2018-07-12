@@ -62,3 +62,11 @@ git push
 * Get a JSON in localhost and handle it to show in the interface
 
 -----
+
+# Binary Tree
+### Create a binary three
+### Get user input and show word suggested
+
+* Get words from any site to create a word list
+
+-----
