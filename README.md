@@ -63,7 +63,7 @@ git push
 
 -----
 
-# Binary Tree
+# [Binary Tree](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Binary%20Tree)
 ### Create a binary three
 ### Get user input and show word suggested
 
