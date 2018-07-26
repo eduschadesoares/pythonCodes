@@ -11,6 +11,13 @@ class Animal:
         return "{} {}".format(self.name, self.genre)
 
 
-a = Animal("rodolfo", "masculino")
+class Dog(Animal):
+    def __init__(self, name, genre, breed):
+        self.breed = breed
+        super().__init__(name, genre)
+
+    
+
+a = Dog("rodolfo", "masculino", "Vira-Lata")
 
 print(a)
