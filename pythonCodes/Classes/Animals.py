@@ -22,7 +22,7 @@ class Dog(Animal):
 
 class LittleDog(Dog):
     def __init__(self, name, genre, breed):
-        super().__init__(self, name, genre, breed)
+        super().__init__(name, genre, breed)
         self.size = "Puppy"
 
     def __str__(self):
@@ -31,4 +31,4 @@ class LittleDog(Dog):
 
 a = LittleDog("rodolfo", "masculino", "Vira-Lata")
 
-print(a)
+print(a.size)
