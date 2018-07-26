@@ -20,6 +20,15 @@ class Dog(Animal):
         return super().__str__() + ", " + self.breed
 
 
-a = Dog("rodolfo", "masculino", "Vira-Lata")
+class LittleDog(Dog):
+    def __init__(self, name, genre, breed):
+        super().__init__(self, name, genre, breed)
+        self.size = "Puppy"
+
+    def __str__(self):
+        return super().__str__() + ", " + self.size
+
+
+a = LittleDog("rodolfo", "masculino", "Vira-Lata")
 
 print(a)
