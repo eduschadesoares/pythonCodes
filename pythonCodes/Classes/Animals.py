@@ -16,7 +16,9 @@ class Dog(Animal):
         self.breed = breed
         super().__init__(name, genre)
 
-    
+    def __str__(self):
+        return super().__str__() + ", " + self.breed
+
 
 a = Dog("rodolfo", "masculino", "Vira-Lata")
 
