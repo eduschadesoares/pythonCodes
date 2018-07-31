@@ -78,7 +78,7 @@ git push
 
 -----
 
-# [Class tests](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/)
+# [Class tests](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Classes)
 ### Some tests with classes and inheritance
 
 * Just for fun
