@@ -77,3 +77,10 @@ git push
 * Get words from any site to create a word list
 
 -----
+
+# [Class tests](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/)
+### Some tests with classes and inheritance
+
+* Just for fun
+
+-----
