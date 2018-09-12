@@ -16,22 +16,27 @@ class Random:
         cursos = [3, 10, 26]
 
         def get_nomes():
-            data = self.file.readNome()
+            try:
+                data = self.file.read_nome()
+            except Exception as error:
+                print(error)
+                return
             if data:
                 for line in data:
                     line = line.rstrip('\n')  # Remove \n
                     nomes.append(line)
-            else:
-                print("Sem palavras")
+
 
         def get_sobrenomes():
-            data = self.file.readSobrenome()
+            try:
+                data = self.file.read_sobrenome()
+            except Exception as error:
+                print(error)
+                return
             if data:
                 for line in data:
                     line = line.rstrip('\n')  # Remove \n
                     sobrenomes.append(line)
-            else:
-                print("Sem palavras")
 
         def create_aluno():
 

@@ -3,48 +3,61 @@
 
 from randomer import Random
 import sys
-sys.path.append('..')
 import postgresql
 
-if len(sys.argv) <= 2:
-    print('./connection USER PASSWORD IP DATABASE')
-
-else:
-    user = sys.argv[1]
-    password = sys.argv[2]
-    ip = sys.argv[3]
-    data_base = sys.argv[4]
-
-
-db = postgresql.open("pq://postgres:123@localhost/Acadêmico")
+sys.path.append('..')
 
 random = Random()
 
-for i in range(1):
-    content = random.randomizeAluno()
-
-    sql = "insert into alunos( mat_alu, nom_alu, cod_curso, dat_nasc, tot_cred, mgp )" \
-          " values ( {}," \
-          " '{}'," \
-          " {}," \
-          " to_date( '{}', 'DD/MM/YYYY' ), " \
-          "{}," \
-          " {} )".format(content['mat_alu'], content['nom_alu'], content['cod_curso'], content['dat_nasc'], content['tot_cred'], content['mgp'],)
+db = None
 
 
-   # sql = "insert into alunos values (default,'Curitiba,'PR')".format(content)
+class Connector:
 
-    try:
-        db.execute(sql)
-    except Exception:
-        print("erro")
+    def __init__(self, user, password, ip, db_name):
+        self.user = user
+        self.password = password
+        self.ip = ip
+        self.db_name = db_name
+        self.db = None
 
-sql = "select * from alunos"
+    def open_db(self):
+        try:
+            self.db = postgresql.open("pq://{}:{}@{}/{}".format(self.user, self.password, self.ip, self.db_name))
+        except Exception as error:
+            print(error)
+            return
+        print('Successfully connected to {}!'.format(self.db_name))
 
-rs = db.prepare(sql)
+    def create_alunos(self):
+        try:
+            alunos_number = int(input('How many alunos do you want to create? '))
+        except Exception as error:
+            print('Insert a number!')
+            return
+        created = 0
+        not_created = 0
+        print('Creating {} alunos...'.format(alunos_number))
+        for i in range(alunos_number):
+            content = random.randomizeAluno()
 
-# for linha in rs:
- #    print(linha)
+            sql = "insert into alunos( mat_alu, nom_alu, cod_curso, dat_nasc, tot_cred, mgp )" \
+                  " values ( {}," \
+                  " '{}'," \
+                  " {}," \
+                  " to_date( '{}', 'DD/MM/YYYY' ), " \
+                  "{}," \
+                  " {} )".format(content['mat_alu'], content['nom_alu'], content['cod_curso'], content['dat_nasc'], content['tot_cred'], content['mgp'],)
 
+            try:
+                self.db.execute(sql)
+                created += 1
+            except Exception as error:
+                print('Error, PK {} already exists!'.format(content['mat_alu']))
+                not_created += 1
 
-db.close()
+        print('{} created, {} failed;'.format(created, not_created))
+
+    def close_db(self):
+        db.close()
+
