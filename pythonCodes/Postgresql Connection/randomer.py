@@ -2,15 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import sys
-sys.path.append('..')
-
 import random
 import datetime
-
 from fileHandler import File
 
-class Random:
+sys.path.append('..')
 
+
+class Random:
     def randomizeAluno(self):
         nomes = []
         sobrenomes = []
@@ -70,10 +69,6 @@ class Random:
         get_sobrenomes()
         content = create_aluno()
         return content
-
-
-
-
 
     def __init__(self):
         self.file = File()
