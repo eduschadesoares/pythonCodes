@@ -84,3 +84,8 @@ git push
 * Just for fun
 
 -----
+
+# [Postgresql Connector](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Postgresql%20Connection)
+### Connects to a local database
+
+* Insert into the database informations
