@@ -22,14 +22,17 @@
 
 
 ### Table of Contents
-
+   * [Memory](memory)
+   * [JSONData](jsondata)
+   * [Postgresql Connector](postgresql-connector)
+   * [Binary Tree](binary-tree)
 
 # 
 
 
 ### Codes
 
-[Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
+##### [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
    It's a dynamic process allocator simulator.
 Allocation algorithms
 MVC Project
