@@ -1,4 +1,4 @@
-<img align="right" width="120" height="120" src="/others/media/python_snake_logo.png">
+<img align="right" width="125" height="125" src="/others/media/python_snake_logo.png">
 
 # Python
 
