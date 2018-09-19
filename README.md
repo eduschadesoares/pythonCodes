@@ -18,7 +18,7 @@
 
 # 
 
-# <img align="center" width="1800" height="250" src="/others/media/coding.gif">
+# <img align="center" width="1300" height="250" src="/others/media/coding.gif">
 
 ### Codes
 
