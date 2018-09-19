@@ -6,19 +6,17 @@
 
 # 
 
-### Install [Python](https://www.python.org/)
-         apt install python3
-
+Install [Python](https://www.python.org/)
 ```base
 apt install python3
 ```
 
-### Install [pip](https://pypi.org/project/pip/)
+Install [pip](https://pypi.org/project/pip/)
 ```python
 python get-pip.py
 ```
 
-### Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)
+Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)
 ```python
 pip install virtualenv
 ``` 
