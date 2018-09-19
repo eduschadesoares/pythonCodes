@@ -6,7 +6,7 @@
 
 # 
 
-### Installing python and requirements
+### Installing Python and requirements
 
 **Install [Python](https://www.python.org/)** `apt install python3`
 
@@ -16,7 +16,7 @@
 
 **Install [Requirements](requirements.txt)** `pip install -r /path/to/requirements.txt`
 
------
+# 
 
 # [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
 ### Dynamic process allocator simulator
