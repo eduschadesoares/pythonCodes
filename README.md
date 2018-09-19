@@ -1,4 +1,4 @@
-<img align="right" width="60%" height="60%" src="https://www.python.org/static/community_logos/python-logo-inkscape.svg">
+<img align="right" width="300" height="300" src="http://www.stickpng.com/img/icons-logos-emojis/tech-companies/python-logo">
 
 # Python
 
