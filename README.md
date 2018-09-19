@@ -7,6 +7,8 @@
 # 
 
 ### Install [Python](https://www.python.org/)
+         apt install python3
+
 ```base
 apt install python3
 ```
