@@ -3,8 +3,8 @@
 
 import requests, json
 
-client_id = '5318f69f342c4019bdbe23c68cc8dcda'
-client_secret = '8e05f567957f42bcb157263ff88651a1'
+client_id = ''
+client_secret = ''
 scopes = 'user-read-private%20user-read-email'
 
 url = 'https://accounts.spotify.com/authorize/?client_id=' + client_id + '&response_type=code&redirect_uri=' + '127.0.0.1' + '&scope=' + scopes + '&state=34fFs29kd09'
