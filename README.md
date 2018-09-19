@@ -18,9 +18,11 @@
 
 # 
 
+# <img align="center" width="900" height="300" src="/others/media/coding.gif">
+
 ### Codes
 
-<img align="right" width="140" height="140" src="/others/media/coding.gif">
+
 
 [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
 Dynamic process allocator simulator
