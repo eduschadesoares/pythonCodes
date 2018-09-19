@@ -18,6 +18,12 @@
 
 # 
 
+## Requirements versions
+
+[![py-postgresql](https://img.shields.io/badge/py--postgresql-1.2.1-green.svg)](https://pypi.org/project/py-postgresql/1.2.1/) [![beautiful](https://img.shields.io/badge/beautifulsoup4-4.6.3-green.svg)](https://pypi.org/project/beautifulsoup4/) [![chardet](https://img.shields.io/badge/chardet-3.0.4-green.svg)](https://pypi.org/project/chardet/) [![getch](https://img.shields.io/badge/getch-1.0-green.svg)](https://pypi.org/project/getch/) [![urllib3](https://img.shields.io/badge/urllib3-1.23-green.svg)](https://pypi.org/project/urllib3/) [![requests](https://img.shields.io/badge/requests-2.19.1-green.svg)](https://pypi.org/project/requests/) [![certifi](https://img.shields.io/badge/certifi-2018.8.24-green.svg)](https://pypi.org/project/certifi/) [![idna](https://img.shields.io/badge/idna-2.7-green.svg)](https://pypi.org/project/idna/) [![keyboard](https://img.shields.io/badge/keyboard-0.13.2-green.svg)](https://pypi.org/project/keyboard/)
+
+#
+
 # <img align="center" width="887" height="250" src="/others/media/coding.gif">
 
 
