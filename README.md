@@ -35,32 +35,31 @@
 #### [Dynamic Process Allocator Simulator](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
   This program uses allocation algorithms to simulate a real process alocator implemented in operating systems.
   
-  * **[MVC Project](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture)** - `Model - View - Controller` Project
+  * **[MVC Project](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture)** -  `model/view/controller project`
+  * Algorithms
+	* First Fit
+	* Best Fit 	
+	* Worst Fit
+	* Circular Fit / Next Fit
+  * Options
+  
+  	* Create memory
+        * Any size (KB)
+    * List memory
+        * Display size
+        * Display processes allocated
+        * Display available size
 
-* First Fit
-* Best Fit 
-* Worst Fit
-* Circular Fit / Next Fit
+    * Create process
+        * Type a name and size
+        * Check if there is available size in memories
 
-#### Options
+    * Remove process
+        * Type a pid and confirm to remove a process
 
-* Create memory
-    * Any size (KB)
-* List memory
-    * Display size
-    * Display processes allocated
-    * Display available size
-    
-* Create process
-    * Type a name and size
-    * Check if there is available size in memories
-    
-* Remove process
-    * Type a pid and confirm to remove a process
-   
-* List process
-    * List all process and its informations
-    
+    * List process
+        * List all process and its informations
+
 -----
 
 # [JSONData](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/JSONData)
