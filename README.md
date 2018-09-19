@@ -2,7 +2,7 @@
 
 # Python
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/) [![Pip Version](https://warehouse-camo.cmh1.psfhosted.org/cd7ef4975d71b4a87a35b3c01b5b1ec8481c4549/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7069702e737667)](https://pypi.org/project/pip/) [![Docs](https://img.shields.io/badge/docs-check%20out-brightgreen.svg)](https://docs.python.org/3/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/) [![Pip Version](https://warehouse-camo.cmh1.psfhosted.org/cd7ef4975d71b4a87a35b3c01b5b1ec8481c4549/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7069702e737667)](https://pypi.org/project/pip/) [![VirtualEnv](https://img.shields.io/badge/virtualenv-16.0.0-blue.svg)](https://virtualenv.pypa.io/en/stable/changes/#id1) [![Docs](https://img.shields.io/badge/docs-check%20out-brightgreen.svg)](https://docs.python.org/3/)
 
 # 
 
