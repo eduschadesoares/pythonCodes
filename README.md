@@ -20,6 +20,8 @@
 
 ### Codes
 
+<img align="right" width="140" height="140" src="/others/media/coding.gif">
+
 [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
 Dynamic process allocator simulator
 Allocation algorithms
