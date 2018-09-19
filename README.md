@@ -6,7 +6,7 @@
 
 # 
 
-### Installing Python and requirements
+## Installing Python and requirements
 
 **Install [Python](https://www.python.org/)** `apt install python3`
 
@@ -21,7 +21,8 @@
 # <img align="center" width="1000" height="250" src="/others/media/coding.gif">
 
 
-### Table of Contents
+## Table of Contents
+
    * [Dynamic Process Allocator Simulator](#dynamic-process-allocator-simulator)
    * [JSONData](#jsondata)
    * [Postgresql Connector](#postgresql-connector)
