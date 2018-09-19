@@ -6,8 +6,6 @@
 
 # 
 
-**Codes**
-
 ### Installing Python and requirements
 
 **Install [Python](https://www.python.org/)** `apt install python3`
@@ -20,10 +18,12 @@
 
 # 
 
-### [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
-### Dynamic process allocator simulator
-#### Allocation algorithms
-##### MVC Project
+### Codes
+
+[Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
+Dynamic process allocator simulator
+Allocation algorithms
+MVC Project
 
 - First Fit
 - Best Fit 
