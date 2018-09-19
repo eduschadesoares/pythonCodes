@@ -18,7 +18,7 @@
 
 # 
 
-## Requirements version
+## Requirements versions
 
 [![py-postgresql](https://img.shields.io/badge/py--postgresql-1.2.1-green.svg)](https://pypi.org/project/py-postgresql/1.2.1/)
 
