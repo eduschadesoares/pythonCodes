@@ -6,6 +6,8 @@
 
 # 
 
+[![codecov](https://codecov.io/gh/eduschadesoares/pythonCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/eduschadesoares/pythonCodes)
+
 ### Install [Python](https://www.python.org/)
 ```base
 apt install python3
