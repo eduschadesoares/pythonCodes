@@ -100,4 +100,4 @@ Some tests with classes and inheritance
 
 # 
 
-# <img align="center" width="890" height="250" src="/others/media/bluesceen.gif">
+# <img align="center" width="885" height="250" src="/others/media/bluesceen.gif">
