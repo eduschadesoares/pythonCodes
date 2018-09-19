@@ -6,6 +6,8 @@
 
 # 
 
+### Installing python and requirements
+
 **Install [Python](https://www.python.org/)** `apt install python3`
 
 **Install [pip](https://pypi.org/project/pip/)** `python get-pip.py`
