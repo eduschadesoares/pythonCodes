@@ -18,7 +18,7 @@
 
 # 
 
-# <img align="center" width="1000" height="250" src="/others/media/coding.gif">
+# <img align="center" width="887" height="250" src="/others/media/coding.gif">
 
 
 ## Table of Contents
@@ -100,4 +100,4 @@ Some tests with classes and inheritance
 
 # 
 
-<img align="right" width="140" height="140" src="/others/media/code.png">
+# <img align="center" width="887" height="150" src="/others/media/hack.gif">
