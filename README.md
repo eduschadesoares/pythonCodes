@@ -6,10 +6,6 @@
 
 # 
 
-[![codecov](https://codecov.io/gh/eduschadesoares/pythonCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/eduschadesoares/pythonCodes)
-
-[![Build Status](https://travis-ci.org/eduschadesoares/pythonCodes.svg?branch=master)](https://travis-ci.org/eduschadesoares/pythonCodes)
-
 ### Install [Python](https://www.python.org/)
 ```base
 apt install python3
