@@ -21,19 +21,6 @@ python get-pip.py
 pip install virtualenv
 ``` 
 
-### Install [Git](https://git-scm.com/)
-```bash
-apt-get install git
-```
-Some Git commands:
-```commandline
-git clone
-git status
-git add
-git commit
-git push
-```
-
 -----
 
 # [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
