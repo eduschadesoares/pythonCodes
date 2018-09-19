@@ -35,7 +35,7 @@
 #### [Dynamic Process Allocator Simulator](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
   This program uses allocation algorithms to simulate a real process alocator implemented in operating systems.
   
-  * **MVC Project**
+  * **[MVC Project](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture)** - `Model - View - Controller` Project
 
 * First Fit
 * Best Fit 
