@@ -4,7 +4,7 @@
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/) [![Pip Version](https://warehouse-camo.cmh1.psfhosted.org/cd7ef4975d71b4a87a35b3c01b5b1ec8481c4549/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7069702e737667)](https://pypi.org/project/pip/) [![VirtualEnv](https://img.shields.io/badge/virtualenv-16.0.0-blue.svg)](https://virtualenv.pypa.io/en/stable/changes/#id1) [![Docs](https://img.shields.io/badge/docs-check%20out-brightgreen.svg)](https://docs.python.org/3/)
 
-[![py-postgresql](https://img.shields.io/badge/py--postgresql-1.2.1-green.svg)](https://pypi.org/project/py-postgresql/1.2.1/) [![urllib3](https://img.shields.io/badge/urllib3-1.23-green.svg)](https://pypi.org/project/urllib3/) [![requests](https://img.shields.io/badge/requests-2.19.1-green.svg)](https://pypi.org/project/requests/) [![beautiful](https://img.shields.io/badge/beautifulsoup4-4.6.3-green.svg)](https://pypi.org/project/beautifulsoup4/)
+[![py-postgresql](https://img.shields.io/badge/py--postgresql-1.2.1-green.svg)](https://pypi.org/project/py-postgresql/1.2.1/) [![beautiful](https://img.shields.io/badge/beautifulsoup4-4.6.3-green.svg)](https://pypi.org/project/beautifulsoup4/) [![urllib3](https://img.shields.io/badge/urllib3-1.23-green.svg)](https://pypi.org/project/urllib3/) [![requests](https://img.shields.io/badge/requests-2.19.1-green.svg)](https://pypi.org/project/requests/) [![certifi](https://img.shields.io/badge/certifi-2018.8.24-green.svg)](https://pypi.org/project/certifi/) [![chardet](https://img.shields.io/badge/chardet-3.0.4-green.svg)](https://pypi.org/project/chardet/)
 
 
 # 
