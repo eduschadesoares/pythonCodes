@@ -7,23 +7,12 @@
 # 
 
 **Install [Python](https://www.python.org/)** `apt install python3`
-```base
-apt install python3
-```
 
-Install [pip](https://pypi.org/project/pip/)
-```python
-python get-pip.py
-```
+**Install [pip](https://pypi.org/project/pip/)** `python get-pip.py`
 
-Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)
-```python
-pip install virtualenv
-``` 
-Install Requirements
-```python
-pip install -r /path/to/requirements.txt
-```
+**Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)** `pip install virtualenv`
+
+**Install Requirements** `pip install -r /path/to/requirements.txt`
 
 -----
 
