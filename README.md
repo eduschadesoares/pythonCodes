@@ -20,6 +20,10 @@ Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)
 ```python
 pip install virtualenv
 ``` 
+Install Requirements
+```python
+pip install -r /path/to/requirements.txt
+```
 
 -----
 
