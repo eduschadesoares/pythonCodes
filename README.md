@@ -12,7 +12,7 @@
 
 **Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)** `pip install virtualenv`
 
-**Install Requirements** `pip install -r /path/to/requirements.txt`
+**Install [Requirements](requirements.txt)** `pip install -r /path/to/requirements.txt`
 
 -----
 
