@@ -1,5 +1,4 @@
-
-## <a href="https://www.python.org/">![Alt text](https://www.python.org/static/community_logos/python-logo-inkscape.svg)</a>
+<img align="right" width="350" height="250" src="https://www.python.org/static/community_logos/python-logo-inkscape.svg">
 
 ### Install [Python](https://www.python.org/)
 ```base
