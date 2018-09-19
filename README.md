@@ -1,45 +1,29 @@
-<img align="right" width="150" height="150" src="/others/media/python_snake_logo.png">
+<img align="right" width="140" height="140" src="/others/media/python_snake_logo.png">
 
-# Python
+# Python Codes
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/) [![Pip Version](https://warehouse-camo.cmh1.psfhosted.org/cd7ef4975d71b4a87a35b3c01b5b1ec8481c4549/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7069702e737667)](https://pypi.org/project/pip/) [![VirtualEnv](https://img.shields.io/badge/virtualenv-16.0.0-blue.svg)](https://virtualenv.pypa.io/en/stable/changes/#id1) [![Docs](https://img.shields.io/badge/docs-check%20out-brightgreen.svg)](https://docs.python.org/3/)
 
 # 
 
-### Install [Python](https://www.python.org/)
-```base
-apt install python3
-```
+### Installing Python and requirements
 
-### Install [pip](https://pypi.org/project/pip/)
-```python
-python get-pip.py
-```
+**Install [Python](https://www.python.org/)** `apt install python3`
 
-### Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)
-```python
-pip install virtualenv
-``` 
+**Install [pip](https://pypi.org/project/pip/)** `python get-pip.py`
 
-### Install [Git](https://git-scm.com/)
-```bash
-apt-get install git
-```
-Some Git commands:
-```commandline
-git clone
-git status
-git add
-git commit
-git push
-```
+**Install [VirtualEnv](https://virtualenv.pypa.io/en/stable/)** `pip install virtualenv`
 
------
+**Install [Requirements](requirements.txt)** `pip install -r /path/to/requirements.txt`
 
-# [Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
-### Dynamic process allocator simulator
-#### Allocation algorithms
-##### MVC Project
+# 
+
+### Codes
+
+[Memory](https://github.com/eduschadesoares/pythonCodes/tree/master/pythonCodes/Memory)
+Dynamic process allocator simulator
+Allocation algorithms
+MVC Project
 
 - First Fit
 - Best Fit 
