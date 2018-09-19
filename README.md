@@ -1,4 +1,4 @@
-<img align="center" width="10%" height="10%" src="https://www.python.org/static/community_logos/python-logo-inkscape.svg">
+<img align="right" width="50%" height="50%" src="https://www.python.org/static/community_logos/python-logo-inkscape.svg">
 
 # Python
 
