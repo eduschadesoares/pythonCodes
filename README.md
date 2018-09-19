@@ -2,6 +2,8 @@
 
 # Python
 
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)](https://www.python.org/downloads/)
+
 # 
 
 ### Install [Python](https://www.python.org/)
