@@ -1,4 +1,4 @@
-<img align="right" width="300" height="300" src="http://www.stickpng.com/img/icons-logos-emojis/tech-companies/python-logo">
+<img align="right" width="150" height="150" src="/others/media/python_snake_logo.png">
 
 # Python
 
