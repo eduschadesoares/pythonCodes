@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import json
-import re
 import sys
 from datetime import *
 import time
@@ -14,6 +12,8 @@ BARBA = 1
 BIGODE = 2
 
 JORNADA_TRABALHO = 20
+
+barbearia = None
 
 class Barbeiro:
     @staticmethod
@@ -39,11 +39,13 @@ class Barbeiro:
 
 
 class Cliente:
+
     def __init__(self, id, service):
         self.id = id
         self.service = sorted(service)
         self.count = datetime.now()
         self.is_proximo = True
+
 
     def __str__(self):
         return str(self.id)
@@ -51,8 +53,10 @@ class Cliente:
 class Barbearia:
     fila = []
 
+
     def __init__(self):
         self.barbeiro = Barbeiro()
+
 
     def acomodar_clientes(self, cliente):
         print("")
@@ -70,6 +74,7 @@ class Barbearia:
         
         self.fila.append(cliente)
 
+
     def tam_fila(self):
         print("")
         if len(self.fila) == 0:
@@ -77,6 +82,7 @@ class Barbearia:
         if len(self.fila) == 1:
             return str("Um cliente está na fila")
         return str("{} clientes estão na fila".format(len(self.fila)))
+
 
     def concorrer(self):
         primeiro = datetime.now()
@@ -94,6 +100,7 @@ class Barbearia:
             print('')
             print("A barbearia está vazia!")
             sys.exit(0)
+
 
     def ser_atendido(self, cliente):
         print('Atendendo cliente.')
@@ -117,6 +124,7 @@ class Barbearia:
                 return cliente
         return cliente
 
+
     def verifica_clientes(self, cliente):
         if len(cliente.service) == 0:
             self.fila.remove(cliente)
@@ -129,36 +137,85 @@ class Barbearia:
                 client.is_proximo = True
             # print('Cliente {} é {}'.format(client, client.is_proximo))
 
-# Abre a barbearia
-barbearia = Barbearia()
 
-# Recebe os clientes
-C1 = Cliente(1, [BARBA, CABELO, BIGODE])
-C2 = Cliente(2, [CABELO])
-C3 = Cliente(3, [BIGODE])
-C4 = Cliente(4, [BARBA, CABELO, BIGODE])
-C5 = Cliente(5, [BARBA, CABELO, BIGODE])
-C6 = Cliente(6, [BARBA, CABELO, BIGODE])
+# Run
+def abre_barbearia():
+    # Abre a barbearia
+    global barbearia
+    barbearia = Barbearia()
 
-# Acomoda os clientes
-barbearia.acomodar_clientes(C1)
-barbearia.acomodar_clientes(C2)
-barbearia.acomodar_clientes(C3)
-# barbearia.acomodar_clientes(C4)
-# barbearia.acomodar_clientes(C5)
-# barbearia.acomodar_clientes(C6)
 
-# Verifica quantidade de clientes na barbearia
-print(barbearia.tam_fila())
+def recebe_acomoda_clientes():
+    # Recebe os clientes
+    C1 = Cliente(1, [BARBA, CABELO, BIGODE])
+    C2 = Cliente(2, [CABELO])
+    C3 = Cliente(3, [BIGODE])
+    C4 = Cliente(4, [BARBA, CABELO, BIGODE])
+    C5 = Cliente(5, [BARBA, CABELO, BIGODE])
+    C6 = Cliente(6, [BARBA, CABELO, BIGODE])
+    C7 = Cliente(7, [BARBA, CABELO, BIGODE])
+    C8 = Cliente(8, [BARBA, CABELO, BIGODE])
+    C9 = Cliente(9, [BARBA, CABELO, BIGODE])
+    C10 = Cliente(10, [BARBA, CABELO, BIGODE])
+    C11 = Cliente(11, [BARBA, CABELO, BIGODE])
+    C12 = Cliente(12, [BARBA, CABELO, BIGODE])
+    C13 = Cliente(13, [BARBA, CABELO, BIGODE])
+    C14 = Cliente(14, [BARBA, CABELO, BIGODE])
+    C15 = Cliente(15, [BARBA, CABELO, BIGODE])
+    C16 = Cliente(16, [BARBA, CABELO, BIGODE])
+    C17 = Cliente(17, [BARBA, CABELO, BIGODE])
+    C18 = Cliente(18, [BARBA, CABELO, BIGODE])
+    C19 = Cliente(18, [BARBA, CABELO, BIGODE])
+    C20 = Cliente(20, [BARBA, CABELO, BIGODE])
 
-for index, qntd_servicos in enumerate(range(JORNADA_TRABALHO), start=1):
+    # Acomoda os clientes
+    barbearia.acomodar_clientes(C1)
+    barbearia.acomodar_clientes(C2)
+    barbearia.acomodar_clientes(C3)
+    barbearia.acomodar_clientes(C4)
+    barbearia.acomodar_clientes(C5)
+    barbearia.acomodar_clientes(C6)
+    barbearia.acomodar_clientes(C7)
+    barbearia.acomodar_clientes(C8)
+    barbearia.acomodar_clientes(C9)
+    barbearia.acomodar_clientes(C10)
+    barbearia.acomodar_clientes(C11)
+    barbearia.acomodar_clientes(C12)
+    barbearia.acomodar_clientes(C13)
+    barbearia.acomodar_clientes(C14)
+    barbearia.acomodar_clientes(C15)
+    barbearia.acomodar_clientes(C16)
+    barbearia.acomodar_clientes(C17)
+    barbearia.acomodar_clientes(C18)
+    barbearia.acomodar_clientes(C19)
+    barbearia.acomodar_clientes(C20)
+
+
+def verifica_tam_fila():
+    # Verifica quantidade de clientes na barbearia
+    print(barbearia.tam_fila())
+
+
+def inicia_expediente():
+    for index, qntd_servicos in enumerate(range(JORNADA_TRABALHO), start=1):
+        print('')
+        print('Jornada de trabalho {}/{}'.format(index, JORNADA_TRABALHO))
+        barbearia.verifica_clientes(barbearia.ser_atendido(barbearia.concorrer()))
+
     print('')
-    print('Jornada de trabalho {}/{}'.format(index, JORNADA_TRABALHO))
-    barbearia.verifica_clientes(barbearia.ser_atendido(barbearia.concorrer()))
+    print('Jornada de trabalho encerrada')
+    if len(barbearia.fila) == 1:
+        print('Restou 1 cliente na fila para ser atendido')
+    else:
+        print('Restaram {} clientes na fila para serem atendidos'.format(len(barbearia.fila)))
 
-print('')
-print('Jornada de trabalho encerrada')
-if len(barbearia.fila) == 1:
-    print('Restou 1 cliente na fila para ser atendido')
+
+if __name__ == '__main__':
+    print('Barbearia do Lamport')
+    abre_barbearia()
+    recebe_acomoda_clientes()
+    verifica_tam_fila()
+    inicia_expediente()
 else:
-    print('Restaram {} clientes na fila para serem atendidos'.format(len(barbearia.fila)))
+    print("You're not supposed to executed this file by module")
+    print("Try again please")
