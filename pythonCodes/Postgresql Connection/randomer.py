@@ -46,7 +46,7 @@ class Random:
             nome_final = '{} {}'.format(nome_aluno, sobrenome_aluno)
 
             now = datetime.datetime.now()
-            mat_alu = '{}{}{}'.format(now.month, now.second, now.microsecond)
+            mat_alu = '{}{}{}'.format(now.minute, now.second, now.microsecond)
             cod_curso = random.choice(cursos)
 
             y = random.choice(range(1978, 2001))
