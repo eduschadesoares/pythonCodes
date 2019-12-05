@@ -84,6 +84,20 @@ class Barbearia:
         return str("{} clientes estão na fila".format(len(self.fila)))
 
 
+    def get_ok_outros(self, cliente):
+        print('')
+        print("Avisando os outros clientes...")
+        for index, client in enumerate(self.fila, start=1):
+            if client is not cliente:
+                print('Cliente {:2}: Ok!'.format(str(client)), end=' ')
+            else:
+                print('Cliente {:2}: --!'.format(str(client)), end=' ')
+            if index % 4 == 0:
+                print("")
+        print('')
+        print('')
+
+
     def concorrer(self):
         primeiro = datetime.now()
         if len(self.fila) > 0:
@@ -95,6 +109,7 @@ class Barbearia:
                     cliente_escolhido = cliente
 
             print('Vez do cliente {}.'.format(cliente_escolhido))
+            self.get_ok_outros(cliente_escolhido)
             return cliente_escolhido
         else:
             print('')
